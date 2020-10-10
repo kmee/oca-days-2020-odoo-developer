@@ -20,3 +20,7 @@ migration:
       addons:
         upgrade:
           - web_responsive
+    - version: 13.0.0.0.2
+      addons:
+        upgrade:
+          - customer_service
