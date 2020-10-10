@@ -16,6 +16,10 @@
                     <!-- TODO -->
                     <group>
                         <field name="name"/>
+                        <field name="description"/>
+                        <field name="user_id"/>
+                        <field name="partner_id"/>
+                        <field name="partner_email"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter"></div>
@@ -40,6 +44,8 @@
             <tree>
                 <!-- TODO -->
                 <field name="name"/>
+                <field name="user_id"/>
+                <field name="partner_id"/>
             </tree>
         </field>
     </record>

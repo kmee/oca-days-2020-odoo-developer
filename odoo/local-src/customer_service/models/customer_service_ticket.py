@@ -10,3 +10,7 @@ class CustomerServiceTicket(models.Model):
     _description = 'Customer Service Ticket'  # TODO
 
     name = fields.Char()
+    description = fields.Html(sanitize_style=True)
+    user_id = fields.Many2one('res.users')
+    partner_id = fields.Many2one('res.partner')
+    partner_email = fields.Char(related='partner_id.email')
