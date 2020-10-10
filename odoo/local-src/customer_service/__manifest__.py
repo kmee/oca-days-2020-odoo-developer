@@ -11,6 +11,7 @@
     'website': 'www.kmee.com.br',
     'depends': [
         'base_kanban_stage',
+        'mail',
     ],
     'data': [
         'security/customer_service_ticket.xml',
