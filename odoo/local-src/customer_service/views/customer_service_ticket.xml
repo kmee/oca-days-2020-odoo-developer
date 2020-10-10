@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="customer_service_ticket_form_view">
+        <field name="name">customer.service.ticket.form (in customer_service)</field>
+        <field name="model">customer.service.ticket</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- TODO -->
+                </header>
+                <sheet>
+                    <!-- TODO -->
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="customer_service_ticket_search_view">
+        <field name="name">customer.service.ticket.search (in customer_service)</field>
+        <field name="model">customer.service.ticket</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- TODO -->
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="customer_service_ticket_tree_view">
+        <field name="name">customer.service.ticket.tree (in customer_service)</field>
+        <field name="model">customer.service.ticket</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- TODO -->
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="customer_service_ticket_act_window">
+        <field name="name">Customer Service Ticket</field> <!-- TODO -->
+        <field name="res_model">customer.service.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="customer_service_ticket_menu">
+        <field name="name">Customer Service Ticket</field>
+        <field name="parent_id" ref="customer_service_main_menu"/> <!-- TODO -->
+        <field name="action" ref="customer_service_ticket_act_window"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+
+</odoo>

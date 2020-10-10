@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.menu" id="customer_service_main_menu">
+        <field name="name">Customer Service</field>
+        <field name="sequence" eval="40"/>
+        <field name="web_icon">customer_service,static/description/icon.png</field>
+    </record>
+
+</odoo>

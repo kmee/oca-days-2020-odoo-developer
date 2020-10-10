@@ -12,7 +12,12 @@
     'depends': [
     ],
     'data': [
+        'security/customer_service_ticket.xml',
+
+        'views/customer_service_menu.xml',
+        'views/customer_service_ticket.xml',
     ],
     'demo': [
+        'demo/customer_service_ticket.xml',
     ],
 }
