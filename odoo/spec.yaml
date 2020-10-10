@@ -2,3 +2,7 @@ odoo:
     modules: []
     src: https://github.com/odoo/odoo 13.0
 
+web:
+    modules: []
+    src: https://github.com/OCA/web 13.0
+

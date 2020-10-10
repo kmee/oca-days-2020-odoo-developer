@@ -13,7 +13,7 @@ services:
       - PGDATABASE=$PGDATABASE
       - PGUSER=$PGUSER
       - PGPASSWORD=$PGPASSWORD
-      - ADDONS_PATH=/odoo/links,/odoo/local-src,/odoo/src/odoo/addons,/odoo/src/addons
+      - ADDONS_PATH=/odoo/links,/odoo/local-src,/odoo/src/odoo/addons,/odoo/src/addons,/odoo/external-src/web
     hostname: ${ENV}-${COMPOSE_PROJECT_NAME}
     labels:
       docky.main.service: true
