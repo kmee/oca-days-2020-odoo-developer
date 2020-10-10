@@ -6,3 +6,6 @@ web:
     modules: []
     src: https://github.com/OCA/web 13.0
 
+kmee-server-tools:
+    modules: ['base_kanban_stage']
+    src: https://github.com/kmee/server-tools 13.0-mig-base_kanban_stage

@@ -7,6 +7,8 @@ from odoo import api, fields, models, _
 class CustomerServiceTicket(models.Model):
 
     _name = 'customer.service.ticket'
+    _inherit = 'base.kanban.abstract'
+
     _description = 'Customer Service Ticket'  # TODO
 
     name = fields.Char()

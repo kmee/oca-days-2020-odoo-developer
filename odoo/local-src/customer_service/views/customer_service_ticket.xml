@@ -10,10 +10,9 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <!-- TODO -->
+                    <field name="stage_id" widget="statusbar"/>
                 </header>
                 <sheet>
-                    <!-- TODO -->
                     <group>
                         <field name="name"/>
                         <field name="description"/>
@@ -42,7 +41,6 @@
         <field name="model">customer.service.ticket</field>
         <field name="arch" type="xml">
             <tree>
-                <!-- TODO -->
                 <field name="name"/>
                 <field name="user_id"/>
                 <field name="partner_id"/>
@@ -50,10 +48,22 @@
         </field>
     </record>
 
+    <record id="customer_service_ticket_kanban_view" model="ir.ui.view">
+        <field name="name">customer.service.ticket.kanban (in customer_service)</field>
+        <field name="model">customer.service.ticket</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="base_kanban_stage.base_kanban_abstract_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='card_body']">
+                <field name="partner_id"/>
+            </xpath>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="customer_service_ticket_act_window">
         <field name="name">Customer Service Ticket</field> <!-- TODO -->
         <field name="res_model">customer.service.ticket</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>

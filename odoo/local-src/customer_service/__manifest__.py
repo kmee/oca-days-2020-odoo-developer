@@ -10,6 +10,7 @@
     'author': 'KMEE',
     'website': 'www.kmee.com.br',
     'depends': [
+        'base_kanban_stage',
     ],
     'data': [
         'security/customer_service_ticket.xml',
