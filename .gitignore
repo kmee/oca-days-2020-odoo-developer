@@ -1,0 +1,27 @@
+# dotfiles
+.*
+!.travis
+!.gitignore
+# compiled python files
+*.py[co]
+# setup.py egg_info
+*.egg-info
+
+/odoo/src
+/odoo/external-src
+/odoo/links
+# agreggator
+/odoo/pip-selfcheck.json
+/odoo/repo.yaml
+/odoo/repos.yaml
+# translation
+*.mo
+# project
+.db
+/data
+
+docker-compose.override.yml
+
+bin/
+lib/
+

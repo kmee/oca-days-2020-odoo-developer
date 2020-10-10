@@ -1,0 +1,13 @@
+# compiled python files
+*.py[cod]
+# setup.py egg_info
+*.egg-info
+# emacs backup files
+*~
+
+external-src/
+src/
+links/
+
+./repo.yaml
+./pip-selfcheck.json

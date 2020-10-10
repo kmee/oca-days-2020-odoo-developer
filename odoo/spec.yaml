@@ -1,0 +1,4 @@
+odoo:
+    modules: []
+    src: https://github.com/odoo/odoo 13.0
+

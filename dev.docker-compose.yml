@@ -1,0 +1,51 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:12.3
+    ports:
+      - 5432
+    environment:
+      - POSTGRES_USER=$PGUSER
+      - POSTGRES_PASSWORD=$PGPASSWORD
+    volumes:
+      - ".data-db:/var/lib/postgresql/data"
+
+  odoo:
+    build: odoo
+    volumes:
+      - ./odoo:/odoo
+      - ./data/addons:/data/odoo/addons
+      - ./data/filestore:/data/odoo/filestore
+      - ./data/sessions:/data/odoo/sessions
+    environment:
+      - DEMO=True
+      - MARABUNTA_MODE=demo
+      - MARABUNTA_ALLOW_SERIE=True
+      - LIST_DB=True
+
+    depends_on:
+      - db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=8069"
+      - "traefik.http.routers.odoo.rule=Host(`odoo.localhost`)"
+      - "traefik.http.routers.odoo_long.rule=Host(`odoo.localhost`) && PathPrefix(`/longpolling/`)"
+      - "traefik.http.services.odoo_long.loadbalancer.server.port=8072"
+    links:
+      - db
+
+  traefik:
+      image: traefik:v2.1
+      command:
+        --api.insecure --providers.docker --providers.docker.exposedbydefault="false"
+      ports:
+          - "127.0.0.1:80:80"
+          - "127.0.0.1:443:443"
+          - "127.0.0.1:8080:8080"
+      volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+      networks:
+        default:
+          aliases:
+            - odoo.localhost
