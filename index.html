@@ -1,0 +1,1258 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Odoo Developer Training &mdash; Odoo Developer Training: From Basis to First Module 2020.10 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Odoo Developer Training: From Basis to First Module 2020.10 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> Odoo Developer Training: From Basis to First Module
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020.10
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Odoo Developer Training</a><ul>
+<li><a class="reference internal" href="#oca-days-2020">OCA Days - 2020</a></li>
+<li><a class="reference internal" href="#luis-felipe-mileo">Luis Felipe Miléo</a></li>
+<li><a class="reference internal" href="#agenda">Agenda</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#intro-odoo-odoo-community">Intro: Odoo + Odoo Community</a><ul>
+<li><a class="reference internal" href="#the-odoo">The Odoo</a></li>
+<li><a class="reference internal" href="#the-odoo-community-association">The Odoo Community Association</a></li>
+<li><a class="reference internal" href="#odoo-oca">Odoo + OCA:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#docker-environment">Docker environment</a><ul>
+<li><a class="reference internal" href="#id1">Docker environment</a><ul>
+<li><a class="reference internal" href="#camptocamp-docker-odoo-project">Camptocamp - Docker Odoo project</a></li>
+<li><a class="reference internal" href="#akretion-ak">Akretion - AK</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#before-start">Before start</a></li>
+<li><a class="reference internal" href="#setup-odoo-environment">Setup Odoo Environment</a><ul>
+<li><a class="reference internal" href="#id2">Setup Odoo Environment</a></li>
+<li><a class="reference internal" href="#setup-the-project">Setup the project</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-odoo">Running Odoo</a></li>
+<li><a class="reference internal" href="#adding-oca-projects-modules">Adding OCA projects / modules</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#coding-our-first-module">Coding our first module</a><ul>
+<li><a class="reference internal" href="#id3">Coding our first module</a><ul>
+<li><a class="reference internal" href="#create-your-module-skeletton">Create your module skeletton</a></li>
+<li><a class="reference internal" href="#adding-a-new-business-model-to-our-module">Adding a new Business Model to our module</a></li>
+<li><a class="reference internal" href="#updating-your-odoo-module-manually">Updating your Odoo module manually</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-fields-to-our-model">Adding fields to our model</a></li>
+<li><a class="reference internal" href="#add-a-kanban-workflow">Add a Kanban / Workflow</a><ul>
+<li><a class="reference internal" href="#add-base-kanban-stage-to-our-module-dependencies">Add base_kanban_stage to our module dependencies</a></li>
+<li><a class="reference internal" href="#inherit-base-kanban-abstract-in-our-model">Inherit base.kanban.abstract in our model</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-email-features">Add Email features</a></li>
+<li><a class="reference internal" href="#sending-sms">Sending SMS</a></li>
+<li><a class="reference internal" href="#creating-a-module-to-be-sent-to-oca">Creating a module to be sent to OCA</a><ul>
+<li><a class="reference internal" href="#adding-a-forking-a-project">Adding a Forking a project</a></li>
+<li><a class="reference internal" href="#easy-creating-a-oca-module-with-bobtemplates-odoo">Easy creating a OCA module with bobtemplates.odoo</a></li>
+<li><a class="reference internal" href="#extending-odoo-models">Extending Odoo models</a></li>
+<li><a class="reference internal" href="#extending-odoo-models-iap-account">Extending Odoo models: iap.account</a></li>
+<li><a class="reference internal" href="#overwriting-odoo-model-sms-api">Overwriting Odoo model: sms.api</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#integrate-customer-service-with-sms">Integrate Customer Service with SMS</a><ul>
+<li><a class="reference internal" href="#send-customer-service-number-by-sms">Send customer service number by SMS</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Odoo Developer Training: From Basis to First Module</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Odoo Developer Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="odoo-developer-training">
+<h1>Odoo Developer Training<a class="headerlink" href="#odoo-developer-training" title="Permalink to this headline">¶</a></h1>
+<p>From Basis to First Module</p>
+<div class="section" id="oca-days-2020">
+<h2>OCA Days - 2020<a class="headerlink" href="#oca-days-2020" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/oca-days-logo.png"><img alt="_images/oca-days-logo.png" class="align-center" src="_images/oca-days-logo.png" style="width: 500px; height: 550px;" /></a>
+</div>
+<div class="section" id="luis-felipe-mileo">
+<h2>Luis Felipe Miléo<a class="headerlink" href="#luis-felipe-mileo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Co-founder and CEO at KMEE;</li>
+<li>Odoo Consultant and Developer since 2010;</li>
+<li><a class="reference external" href="https://odoo-community.org/psc-teams/brazil-66">PSC, team leader, of Brazilian Localization:</a></li>
+<li>Delegate member of Odoo Community Association;</li>
+<li>Computer Engineer;</li>
+<li><a class="reference external" href="https://twitter.com/luisfelipemileo">twitter &#64;luisfelipemileo</a></li>
+<li><a class="reference external" href="https://www.instagram.com/luisfelipemileo/">instagram.com/luisfelipemileo</a></li>
+<li><a class="reference external" href="https://linkedin.com/in/luisfelipemileo">linkedin.com/in/luisfelipemileo</a></li>
+<li><a class="reference external" href="https://github.com/mileo">github.com/mileo</a></li>
+<li>www.kmee.com.br</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Fell free to contact me after the presentation at OCA discord channel. I will be very happy to clarify any remaining doubts.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="agenda">
+<h2>Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Intro: Odoo + Odoo Community;</li>
+<li>Setup Project: Odoo and Docker Environment;</li>
+<li>Coding;</li>
+<li>Q&amp;A session.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="intro-odoo-odoo-community">
+<h1>Intro: Odoo + Odoo Community<a class="headerlink" href="#intro-odoo-odoo-community" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-odoo">
+<h2>The Odoo<a class="headerlink" href="#the-odoo" title="Permalink to this headline">¶</a></h2>
+<p>Odoo is an Open Source ERP + CRM:</p>
+<ul class="simple">
+<li>Great Framework to create Business APPs;</li>
+<li>Uses Python + Javascript + PostgreSQL;</li>
+<li>Source Code: <a class="reference external" href="https://github.com/odoo/odoo">https://github.com/odoo/odoo</a></li>
+<li>Technical Doc: <a class="reference external" href="https://www.odoo.com/documentation">https://www.odoo.com/documentation</a></li>
+<li>User Doc: <a class="reference external" href="https://www.odoo.com/documentation/user/">https://www.odoo.com/documentation/user/</a></li>
+<li>User Training Videos: <a class="reference external" href="https://www.odoo.com/slides/all">https://www.odoo.com/slides/all</a></li>
+<li>Great Community: OCA =D</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>TIP: A good developer must seek functional understanding. If you know a module that has functionality similar to the one you want to develop, you can get good ideas by reading it.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-odoo-community-association">
+<h2>The Odoo Community Association<a class="headerlink" href="#the-odoo-community-association" title="Permalink to this headline">¶</a></h2>
+<p>The Odoo Community Association, or OCA, is a nonprofit organization whose mission is to
+promote the widespread use of Odoo and to support the collaborative development
+of Odoo features.</p>
+<ul class="simple">
+<li>Website: <a class="reference external" href="https://odoo-community.org/">https://odoo-community.org/</a></li>
+<li>Discord Channel: <a class="reference external" href="https://discord.gg/tNby4ku">https://discord.gg/tNby4ku</a></li>
+<li>Mailing Lists: <a class="reference external" href="https://odoo-community.org/groups">https://odoo-community.org/groups</a></li>
+</ul>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>3000+ Odoo Modules with high quality code:</dt>
+<dd><ul class="first last">
+<li>Search here: <a class="reference external" href="https://odoo-community.org/shop">https://odoo-community.org/shop</a></li>
+<li>Find the code: <a class="reference external" href="https://github.com/oca">https://github.com/oca</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>OCA contributors use Twitter a lot! Find who they are here: <a class="reference external" href="https://github.com/orgs/OCA/people">https://github.com/orgs/OCA/people</a> and follow them.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="odoo-oca">
+<h2>Odoo + OCA:<a class="headerlink" href="#odoo-oca" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/eco.png" class="align-center" src="_images/eco.png" />
+</div>
+</div>
+<div class="section" id="docker-environment">
+<h1>Docker environment<a class="headerlink" href="#docker-environment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Docker environment<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to run Odoo, it&#8217;s important that you know how to deploy it manually too because if you have a problem with docker, you will really need to know the basics.</p>
+<p>If you don&#8217;t know it very well, check the Odoo doc:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">odoo</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">documentation</span><span class="o">/</span><span class="mf">14.0</span><span class="o">/</span><span class="n">setup</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">html</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">odoo</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">documentation</span><span class="o">/</span><span class="mf">14.0</span><span class="o">/</span><span class="n">setup</span><span class="o">/</span><span class="n">deploy</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>There are a lot of good docker implementations:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">odoo</span><span class="o">/</span><span class="n">docker</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">acsone</span><span class="o">/</span><span class="n">odoo</span><span class="o">-</span><span class="n">bedrock</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Tecnativa</span><span class="o">/</span><span class="n">doodba</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">camptocamp</span><span class="o">/</span><span class="n">docker</span><span class="o">-</span><span class="n">odoo</span><span class="o">-</span><span class="n">project</span>
+</pre></div>
+</div>
+<div class="section" id="camptocamp-docker-odoo-project">
+<h3>Camptocamp - Docker Odoo project<a class="headerlink" href="#camptocamp-docker-odoo-project" title="Permalink to this headline">¶</a></h3>
+<p>Main components:</p>
+<ol class="arabic simple">
+<li><strong>Docker project</strong>: <a class="reference external" href="https://github.com/camptocamp/docker-odoo-project">https://github.com/camptocamp/docker-odoo-project</a></li>
+<li><strong>Marabunta</strong> (Used to provide an easy way to create Updates for Odoo fast and run easily): <a class="reference external" href="https://github.com/camptocamp/marabunta">https://github.com/camptocamp/marabunta</a></li>
+<li><strong>Anthem</strong> (Help scripting Odoo instances for automated setup, upgrades, testing and more): <a class="reference external" href="https://github.com/camptocamp/anthem">https://github.com/camptocamp/anthem</a></li>
+</ol>
+</div>
+<div class="section" id="akretion-ak">
+<h3>Akretion - AK<a class="headerlink" href="#akretion-ak" title="Permalink to this headline">¶</a></h3>
+<p>The toolbelt for odoo: <a class="reference external" href="https://github.com/akretion/ak">https://github.com/akretion/ak</a></p>
+<p>Do a lot of thinks but, in this training we will gonna use it for only two:</p>
+<ol class="arabic simple">
+<li>Download the addons</li>
+<li>Generate addons path</li>
+</ol>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="c1">#Install with a normal user</span>
+python3 -m pip install git+https://github.com/akretion/ak --user
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="before-start">
+<h2>Before start<a class="headerlink" href="#before-start" title="Permalink to this headline">¶</a></h2>
+<p>You will need to ensure a few things:</p>
+<ol class="arabic simple">
+<li>Docker installed and running: <a class="reference external" href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/</a></li>
+<li>Docker Compose: <a class="reference external" href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></li>
+<li>Python 3</li>
+<li>Python Pip <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">https://pip.pypa.io/en/stable/installing/</a></li>
+<li>Install Akretion AK</li>
+</ol>
+</div>
+<div class="section" id="setup-odoo-environment">
+<h2>Setup Odoo Environment<a class="headerlink" href="#setup-odoo-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Setup Odoo Environment<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>We will start from a pre-configured repository. To know more about it you must study a
+little a about the camp2camp docker-odoo-project, docker itself and other used components
+like postgresql and traefik.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>git clone https://github.com/kmee/oca-days-2020-odoo-developer-source.git --branch<span class="o">=</span>template
+<span class="nb">cd</span> oca-days-2020-odoo-developer-source
+</pre></div>
+</div>
+<p>You will have the folder structure above:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="p">|</span>-- dev.docker-compose.yml
+<span class="p">|</span>── docker-compose.yml
+<span class="p">|</span>── odoo
+    <span class="p">|</span>── data
+    <span class="p">|</span>── dev_oca_days.egg-info
+    <span class="p">|</span>── Dockerfile
+    <span class="p">|</span>── external-src  <span class="c1"># Downloaded OCA repositories source code</span>
+    <span class="p">|</span>── links
+    <span class="p">|</span>── local-src   <span class="c1"># Your customer modules</span>
+    <span class="p">|</span>── MANIFEST.in
+    <span class="p">|</span>── migration.yml  <span class="c1"># Migration Scripts</span>
+    <span class="p">|</span>── repo.yaml
+    <span class="p">|</span>── requirements.txt  <span class="c1"># Extra requirements for your project</span>
+    <span class="p">|</span>── setup.py
+    <span class="p">|</span>── songs  <span class="c1">#  Scripts with antherm</span>
+    <span class="p">|</span>── spec.yaml  <span class="c1"># Source Code specification: Where download Odoo and OCA repos.</span>
+    <span class="p">|</span>── src  <span class="c1"># Downloaded Odoo Source Code</span>
+    <span class="p">|</span>── VERSION
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-the-project">
+<h3>Setup the project<a class="headerlink" href="#setup-the-project" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="c1"># Inside de project go to Odoo folder</span>
+<span class="nb">cd</span> oca-days-2020-odoo-developer-docs
+<span class="nb">cd</span> odoo
+<span class="c1"># Run **ak build** to download the sources</span>
+ak build
+<span class="c1"># To know more about what this command is doing read the file spec.yml</span>
+<span class="c1">#</span>
+<span class="c1"># Go back to the main folder</span>
+<span class="nb">cd</span> ..
+<span class="c1"># Build the Odoo Docker</span>
+docker-compose build
+<span class="c1"># To know more about what this command is doing read the file odoo/Dockerfile</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-odoo">
+<h2>Running Odoo<a class="headerlink" href="#running-odoo" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="c1"># In the project&#39;s root folder</span>
+
+docker-compose up
+
+<span class="c1"># To stop press CTRL + C</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-oca-projects-modules">
+<h2>Adding OCA projects / modules<a class="headerlink" href="#adding-oca-projects-modules" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have the Odoo up and running let&#8217;s add a new project to improve it.</p>
+<ol class="arabic simple">
+<li>Go to <a class="reference external" href="https://odoo-community.org/shop">https://odoo-community.org/shop</a> and search for <strong>Responsive</strong>;</li>
+<li>Open the module <strong>web_responsive</strong>, from Tecnativa and LasLabs, go to the website(<a class="reference external" href="https://github.com/OCA/web">https://github.com/OCA/web</a>)</li>
+<li>Copy the link.</li>
+<li>Edit spec.yml</li>
+</ol>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>odoo:
+    modules: <span class="o">[]</span>
+    src: https://github.com/odoo/odoo <span class="m">13</span>.0
+
+<span class="hll">web:
+</span><span class="hll">    modules: <span class="o">[]</span>
+</span><span class="hll">    src: https://github.com/OCA/web <span class="m">13</span>.0
+</span></pre></div>
+</div>
+<p>When <strong>ak build</strong> has finished running it displays new addons path that you can must put in your docker-compose file</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>ak build
+<span class="o">[</span>...<span class="o">]</span>
+<span class="o">(</span>INFO<span class="o">)</span> <span class="o">[</span><span class="m">07</span>:21:45<span class="o">]</span> git_aggregator.repo  src   End aggregation of /home/mileo/Projects/oca-days-2020/oca-days-2020-odoo-developer-source/odoo/src
+<span class="hll">Addons path <span class="k">for</span> your config file:  /odoo/links,/odoo/local-src,/odoo/src/odoo/addons,/odoo/src/addons,/odoo/external-src/web
+</span></pre></div>
+</div>
+<p>TIP: This will add all the modules of the project OCA/web, if you just want the web_responsive you can use the following syntax:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>odoo:
+    modules: <span class="o">[]</span>
+    src: https://github.com/odoo/odoo <span class="m">13</span>.0
+
+web:
+<span class="hll">    modules: <span class="o">[</span><span class="s1">&#39;web_responsive&#39;</span><span class="o">]</span>
+</span>    src: https://github.com/OCA/web <span class="m">13</span>.0
+</pre></div>
+</div>
+<p>Edit your docker compose to update the ADDONS_PATH</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>services:
+  odoo:
+    environment:
+      - <span class="nv">PYTHONDONTWRITEBYTECODE</span><span class="o">=</span>True
+      - <span class="nv">LOCAL_USER_ID</span><span class="o">=</span><span class="nv">$UID</span>
+      - <span class="nv">RUNNING_ENV</span><span class="o">=</span><span class="nv">$ENV</span>
+      - <span class="nv">MARABUNTA_MODE</span><span class="o">=</span>demo
+      - <span class="nv">DB_HOST</span><span class="o">=</span><span class="nv">$PGHOST</span>
+      - <span class="nv">DB_NAME</span><span class="o">=</span><span class="nv">$PGDATABASE</span>
+      - <span class="nv">DB_USER</span><span class="o">=</span><span class="nv">$PGUSER</span>
+      - <span class="nv">DB_PASS</span><span class="o">=</span><span class="nv">$PGPASSWORD</span>
+      - <span class="nv">PGHOST</span><span class="o">=</span><span class="nv">$PGHOST</span>
+      - <span class="nv">PGDATABASE</span><span class="o">=</span><span class="nv">$PGDATABASE</span>
+      - <span class="nv">PGUSER</span><span class="o">=</span><span class="nv">$PGUSER</span>
+      - <span class="nv">PGPASSWORD</span><span class="o">=</span><span class="nv">$PGPASSWORD</span>
+<span class="hll">      - <span class="nv">ADDONS_PATH</span><span class="o">=</span>/odoo/links,/odoo/local-src,/odoo/src/odoo/addons,/odoo/src/addons,/odoo/external-src/web
+</span>    hostname: <span class="si">${</span><span class="nv">ENV</span><span class="si">}</span>-<span class="si">${</span><span class="nv">COMPOSE_PROJECT_NAME</span><span class="si">}</span>
+    labels:
+      docky.main.service: <span class="nb">true</span>
+      docky.user: odoo
+    volumes:
+      - ./odoo:/odoo
+      - ./data/addons:/data/odoo/addons
+      - ./data/filestore:/data/odoo/filestore
+      - ./data/sessions:/data/odoo/sessions
+version: <span class="s1">&#39;3.7&#39;</span>
+</pre></div>
+</div>
+<p>Lets auto install web_responsive with a migration script, edit you PROJECT_ROOT/odoo/migration.yml</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>migration:
+  options:
+    install_command: odoo
+  versions:
+    - version: <span class="m">13</span>.0.0.0.0
+      operations:
+        pre:
+          - <span class="s2">&quot;sh -c &#39;psql -c \&quot;CREATE EXTENSION pg_trgm;\&quot;&#39;&quot;</span>
+        post:
+          - anthem songs.install.base::main
+      addons:
+        upgrade:
+          - contacts
+      modes:
+        demo:
+          operations:
+            post:
+              - anthem songs.install.demo::main
+<span class="hll">    - version: <span class="m">13</span>.0.0.0.1
+</span><span class="hll">      addons:
+</span><span class="hll">          - web_responsive
+</span></pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="coding-our-first-module">
+<h1>Coding our first module<a class="headerlink" href="#coding-our-first-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>Coding our first module<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>In our example module we will create an application for customer service management:
+with Kanban and personalized workflow, integration with email and sms.</p>
+<p>To help us we will use the <a class="reference external" href="https://github.com/acsone/bobtemplates.odoo">https://github.com/acsone/bobtemplates.odoo</a> install it
+in your local user:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>pip install bobtemplates.odoo
+</pre></div>
+</div>
+<div class="section" id="create-your-module-skeletton">
+<h3>Create your module skeletton<a class="headerlink" href="#create-your-module-skeletton" title="Permalink to this headline">¶</a></h3>
+<p>Run bob the command inside de folder local-src and answer the questions:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> PROJECT_ROOT/odoo/local-src
+<span class="hll">mrbob bobtemplates.odoo:addon
+</span>
+Welcome to mr.bob interactive mode. Before we generate directory structure,
+some questions need to be answered.
+
+Answer with a question mark to display help.
+Values in square brackets at the end of the questions show the
+default value <span class="k">if</span> there is no answer.
+<span class="hll">
+</span><span class="hll">--&gt; Addon name <span class="o">(</span>with underscores<span class="o">)</span>: customer_service
+</span><span class="hll">--&gt; Is it an OCA addon <span class="o">[</span>n<span class="o">]</span>:
+</span><span class="hll">--&gt; Summary: ACME Customer Service
+</span><span class="hll">--&gt; Version <span class="o">[</span><span class="m">12</span>.0.1.0.0<span class="o">]</span>: <span class="m">13</span>.0.1.0.0
+</span><span class="hll">--&gt; Copyright holder name: KMEE
+</span><span class="hll">--&gt; Copyright year: <span class="m">2020</span>
+</span><span class="hll">--&gt; Website: www.kmee.com.br
+</span>
+Generated file structure at PROJECT_ROOT/odoo/local-src
+</pre></div>
+</div>
+<p>You will have the following file structure:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="p">|</span>── customer_service
+│   <span class="p">|</span>── __init__.py  <span class="c1"># All Odoo modules are python modules</span>
+│   <span class="p">|</span>── __manifest__.py  <span class="c1"># Module manifest: Here you will have the name, dependencies, authors and etc</span>
+<span class="p">|</span>── README.md  <span class="c1"># Description of the module, as displayed on github or OCA website.</span>
+</pre></div>
+</div>
+<p>Add our module to the migration file, in a new version.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>    <span class="o">[</span>...<span class="o">]</span>
+    - version: <span class="m">13</span>.0.0.0.1
+      addons:
+          - web_responsive
+    - version: <span class="m">13</span>.0.0.0.2
+      addons:
+          - customer_service
+</pre></div>
+</div>
+<p>Run Odoo an check that our module ir already installed.</p>
+<p>TIP: When you are starting developing, the best way to go further is with little baby steps.</p>
+</div>
+<div class="section" id="adding-a-new-business-model-to-our-module">
+<h3>Adding a new Business Model to our module<a class="headerlink" href="#adding-a-new-business-model-to-our-module" title="Permalink to this headline">¶</a></h3>
+<p>A model will represent the Business process, the data that you want to store and
+behaviors of the data you’re storing.</p>
+<p>The basics:</p>
+<ul class="simple">
+<li>Each model is a Python class that subclasses odoo.models.Model.</li>
+<li>Each model is generally maps to a single database table.</li>
+<li>Each attribute of the model represents a database field.</li>
+<li>With all of this, Django gives you an automatically-generated database-access API; see Making queries.</li>
+</ul>
+<p>For example a CRM LEAD of Odoo Core crm module:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Lead</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;crm.lead&quot;</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s2">&quot;Lead/Opportunity&quot;</span>
+    <span class="c1">#[...]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="s1">&#39;Opportunity&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">&#39;res.partner&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s1">&#39;Customer&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Linked partner (optional). Usually created when converting the lead. You can find a partner by its Name, TIN, Email or Internal Reference.&quot;</span><span class="p">)</span>
+    <span class="n">active</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="s1">&#39;Active&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">email_from</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Email address of the contact&quot;</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Notes&#39;</span><span class="p">)</span>
+    <span class="c1">#[...]</span>
+</pre></div>
+</div>
+<p>With the help o bob.odoo we will create our first Odoo model with accompanying form, tree, action, menu, demo data and ACL</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> customer_service <span class="c1"># Go inside de module folder that you want to create the model</span>
+<span class="hll">mrbob bobtemplates.odoo:model
+</span>
+Welcome to mr.bob interactive mode. Before we generate directory structure, some questions
+need to be answered. Answer with a question mark to display help. Values in square
+brackets at the end of the questions show the default value <span class="k">if</span> there is no answer.
+
+<span class="hll">--&gt; Odoo version <span class="o">(</span><span class="m">8</span><span class="p">|</span><span class="m">9</span><span class="p">|</span><span class="m">10</span><span class="p">|</span><span class="m">11</span><span class="p">|</span><span class="m">12</span><span class="o">)</span> <span class="o">[</span><span class="m">12</span><span class="o">]</span>: <span class="m">13</span>
+</span><span class="hll">--&gt; Model name <span class="o">(</span>dotted notation<span class="o">)</span>: customer.service.ticket
+</span><span class="hll">--&gt; Inherit <span class="o">[</span>y<span class="o">]</span>: n
+</span><span class="hll">--&gt; Form view <span class="o">[</span>y<span class="o">]</span>: y
+</span><span class="hll">--&gt; Search view <span class="o">[</span>y<span class="o">]</span>: y
+</span><span class="hll">--&gt; Tree view <span class="o">[</span>y<span class="o">]</span>: y
+</span><span class="hll">--&gt; Action and menu entry <span class="o">[</span>y<span class="o">]</span>: y
+</span><span class="hll">--&gt; ACL <span class="o">[</span>y<span class="o">]</span>: y
+</span><span class="hll">--&gt; Demo data <span class="o">[</span>y<span class="o">]</span>: y
+</span><span class="hll">--&gt; Copyright holder name: KMEE
+</span><span class="hll">--&gt; Copyright year: <span class="m">2020</span>
+</span>Generated file structure at PROJECT_ROOT/odoo/local-src/customer_service
+</pre></div>
+</div>
+<p>You will have the following file structure:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="p">|</span>── customer_service
+│   <span class="p">|</span>── demo
+│   │   <span class="p">|</span>── customer_service_ticket.xml
+│   <span class="p">|</span>── __init__.py  <span class="c1"># Updated with the model import</span>
+│   <span class="p">|</span>── __manifest__.py  <span class="c1"># Update with the imports of demo/security and views.</span>
+│   <span class="p">|</span>── models
+│   │   <span class="p">|</span>── customer_service_ticket.py <span class="c1"># Your module definition.</span>
+│   │   <span class="p">|</span>── __init__.py
+│   <span class="p">|</span>── security
+│   │   <span class="p">|</span>── customer_service_ticket.xml <span class="c1"># User access rules</span>
+│   <span class="p">|</span>── views
+│       <span class="p">|</span>── customer_service_ticket.xml <span class="c1"># Our views: tree, form, search, kanban.</span>
+<span class="p">|</span>── README.md
+</pre></div>
+</div>
+<p>Before install it we need to fix some settings:</p>
+<ol class="arabic simple">
+<li>Create a main menu</li>
+<li>Relate customer service menu with main menu</li>
+<li>Ensure create / write / delete user access rules</li>
+</ol>
+<p>To create a main menu we need a icon, for that we will use a standard item, download from Odoo webiste:
+<a class="reference external" href="https://www.odoo.com/pt_BR/page/brand-assets">https://www.odoo.com/pt_BR/page/brand-assets</a></p>
+<p>Create a folder struct inside the module and save it: <strong>odoo/local-src/customer_service/static/description/icon.png</strong></p>
+<p>Inside de folder views, create a new file: <strong>customer_service/views/customer_service_menu.xml</strong></p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;odoo&gt;</span>
+
+    <span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.ui.menu&quot;</span> <span class="na">id=</span><span class="s">&quot;customer_service_main_menu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Customer Service<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;sequence&quot;</span> <span class="na">eval=</span><span class="s">&quot;40&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;web_icon&quot;</span><span class="nt">&gt;</span>customer_service,static/description/icon.png<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;/record&gt;</span>
+
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+<p>Edit the module manifest to import the main menu:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Customer Service&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        ACME Customer Service&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;13.0.1.0.0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;license&#39;</span><span class="p">:</span> <span class="s1">&#39;AGPL-3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;KMEE&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;website&#39;</span><span class="p">:</span> <span class="s1">&#39;www.kmee.com.br&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;depends&#39;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;security/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+<span class="hll">        <span class="s1">&#39;views/customer_service_menu.xml&#39;</span><span class="p">,</span>
+</span>        <span class="s1">&#39;views/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;demo&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;demo/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ensure that you put it before the customer_service_ticket, <strong>the order matters</strong>.</p>
+<p>Let&#8217;s relate the service ticket menu with our new main menu, open the file: <strong>odoo/local-src/customer_service/views/customer_service_ticket.xml</strong> and edit the last section:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>[...]
+<span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.ui.menu&quot;</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_menu&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Customer Service Ticket<span class="nt">&lt;/field&gt;</span>
+<span class="hll">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;parent_id&quot;</span> <span class="na">ref=</span><span class="s">&quot;customer_service_main_menu&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- The id of the main menu --&gt;</span>
+</span>    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;action&quot;</span> <span class="na">ref=</span><span class="s">&quot;customer_service_ticket_act_window&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;sequence&quot;</span> <span class="na">eval=</span><span class="s">&quot;16&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>Edit
+<strong>odoo/local-src/customer_service/security/customer_service_ticket.xml</strong>
+changing all the permissions to <strong>ONE</strong></p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;odoo&gt;</span>
+    <span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.model.access&quot;</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_access_name&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- TODO acl id --&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>customer.service.ticket access name<span class="nt">&lt;/field&gt;</span> <span class="c">&lt;!-- TODO acl name --&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model_id&quot;</span> <span class="na">ref=</span><span class="s">&quot;model_customer_service_ticket&quot;</span><span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- TODO review and adapt --&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;group_id&quot;</span> <span class="na">ref=</span><span class="s">&quot;base.group_user&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;perm_read&quot;</span> <span class="na">eval=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="hll">        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;perm_create&quot;</span> <span class="na">eval=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;perm_write&quot;</span> <span class="na">eval=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;perm_unlink&quot;</span> <span class="na">eval=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span>    <span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-your-odoo-module-manually">
+<h3>Updating your Odoo module manually<a class="headerlink" href="#updating-your-odoo-module-manually" title="Permalink to this headline">¶</a></h3>
+<p>If yout docker-composed is already running stop it. And run it with the folllowing parameters:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>docker-compose run --rm -e <span class="nv">DB_NAME</span><span class="o">=</span>dev-oca-days odoo odoo -u customer_service --stop-after-init
+<span class="c1"># This command will run Odoo, update the module customer_service,</span>
+<span class="c1"># installed on the database dev-oca-days and when finished will stop the Odoo.</span>
+<span class="c1"># Start Odoo again as normally</span>
+docker-compose up
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-fields-to-our-model">
+<h2>Adding fields to our model<a class="headerlink" href="#adding-fields-to-our-model" title="Permalink to this headline">¶</a></h2>
+<p>At this moment you must we have a basic module, that we can install, save and edit data. With a tree view and a form view.
+But we need more, let&#8217;s edit <em>odoo/local-src/customer_service/models/customer_service_ticket.py</em> and add some fields.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">_</span>
+
+<span class="k">class</span> <span class="nc">CustomerServiceTicket</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;customer.service.ticket&#39;</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">&#39;Customer Service Ticket&#39;</span>  <span class="c1"># TODO</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
+<span class="hll">    <span class="n">description</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Html</span><span class="p">(</span><span class="n">sanitize_style</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">user_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">&#39;res.users&#39;</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">&#39;res.partner&#39;</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">partner_email</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">related</span><span class="o">=</span><span class="s1">&#39;partner_id.email&#39;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>We need to add this new fields to the view, check your <strong>odoo/local-src/customer_service/views/customer_service_ticket.xml</strong>, you will see
+that are five blocks of code:</p>
+<ol class="arabic simple">
+<li>Form view;</li>
+<li>Search / Filter View (Add Filter, Group and Favorites search);</li>
+<li>Tree / List view;</li>
+<li>Action (Speaking in a very simple way links the menu with the views);</li>
+<li>Menu;</li>
+</ol>
+<p>Add the all the new fields to the form view:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_form_view&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>customer.service.ticket.form (in customer_service)<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>customer.service.ticket<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;arch&quot;</span> <span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;form&gt;</span>
+            <span class="nt">&lt;header&gt;</span>
+            <span class="nt">&lt;/header&gt;</span>
+            <span class="nt">&lt;sheet&gt;</span>
+                <span class="nt">&lt;group&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+<span class="hll">                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;user_id&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;partner_id&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;partner_email&quot;</span><span class="nt">/&gt;</span>
+</span>                <span class="nt">&lt;/group&gt;</span>
+            <span class="nt">&lt;/sheet&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;oe_chatter&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>Add the some fields to the tree view:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_tree_view&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>customer.service.ticket.tree (in customer_service)<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>customer.service.ticket<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;arch&quot;</span> <span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tree&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+<span class="hll">            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;user_id&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;partner_id&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;/tree&gt;</span>
+</span>    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-a-kanban-workflow">
+<h2>Add a Kanban / Workflow<a class="headerlink" href="#add-a-kanban-workflow" title="Permalink to this headline">¶</a></h2>
+<p>To quick add a Kanban without coding a lot we will use a very nice OCA module: <strong>base_kanban_stage</strong></p>
+<p>In the moment of this talk the module isn&#8217;t migrated wet to version 13.0, then we will use a pull request instead of the main branch.
+This is a good way to review other contributors work. Just be careful if you will gonna use it for production enviroment.</p>
+<p><a class="reference external" href="https://github.com/OCA/server-tools/pull/1799">https://github.com/OCA/server-tools/pull/1799</a></p>
+<p>Lets add it to spec.yaml:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">odoo</span><span class="p">:</span>
+    <span class="nt">modules</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+    <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/odoo/odoo 13.0</span>
+
+<span class="nt">web</span><span class="p">:</span>
+    <span class="nt">modules</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+<span class="hll">    <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/OCA/web 13.0</span>
+</span><span class="hll">
+</span><span class="hll"><span class="nt">kmee-server-tools</span><span class="p">:</span>
+</span>    <span class="nt">modules</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;base_kanban_stage&#39;</span><span class="p p-Indicator">]</span>
+    <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/kmee/server-tools 13.0-mig-base_kanban_stage</span>
+</pre></div>
+</div>
+<div class="section" id="add-base-kanban-stage-to-our-module-dependencies">
+<h3>Add base_kanban_stage to our module dependencies<a class="headerlink" href="#add-base-kanban-stage-to-our-module-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to add base_kanban_stage to our module dependencies list. To do that we need to change the module manifest, by editing the <strong>odoo/local-src/customer_service/__manifest__.py</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Customer Service&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        ACME Customer Service&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;13.0.1.0.0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;license&#39;</span><span class="p">:</span> <span class="s1">&#39;AGPL-3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;KMEE&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;website&#39;</span><span class="p">:</span> <span class="s1">&#39;www.kmee.com.br&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;depends&#39;</span><span class="p">:</span> <span class="p">[</span>
+<span class="hll">        <span class="s1">&#39;base_kanban_stage_state&#39;</span><span class="p">,</span>
+</span>    <span class="p">],</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;security/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;views/customer_service_menu.xml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;views/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;demo&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;demo/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inherit-base-kanban-abstract-in-our-model">
+<h3>Inherit base.kanban.abstract in our model<a class="headerlink" href="#inherit-base-kanban-abstract-in-our-model" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Inherit from <code class="docutils literal"><span class="pre">base.kanban.abstract</span></code> to add Kanban stage functionality to</dt>
+<dd>the customer.service.ticket:</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomerServiceTicket</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;customer.service.ticket&#39;</span>
+<span class="hll">    <span class="n">_inherit</span> <span class="o">=</span> <span class="s1">&#39;base.kanban.abstract&#39;</span>
+</span></pre></div>
+</div>
+<p>By doing that we add all the functionalists of the model &#8216;base.kanban.abstract&#8217; in our model.</p>
+<p>Add a new view record at <strong>customer_service_ticket.xml</strong> and the <strong>kanban</strong> to the view_mode</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="hll"><span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_kanban_view&quot;</span> <span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>customer.service.ticket.kanban (in customer_service)<span class="nt">&lt;/field&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>customer.service.ticket<span class="nt">&lt;/field&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;mode&quot;</span><span class="nt">&gt;</span>primary<span class="nt">&lt;/field&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;inherit_id&quot;</span> <span class="na">ref=</span><span class="s">&quot;base_kanban_stage.base_kanban_abstract_view_kanban&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;arch&quot;</span> <span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;xpath</span> <span class="na">expr=</span><span class="s">&quot;//div[@name=&#39;card_body&#39;]&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;partner_id&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">        <span class="nt">&lt;/xpath&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;/field&gt;</span>
+</span><span class="hll"><span class="nt">&lt;/record&gt;</span>
+</span>
+<span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.actions.act_window&quot;</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_act_window&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Customer Service Ticket<span class="nt">&lt;/field&gt;</span> <span class="c">&lt;!-- TODO --&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;res_model&quot;</span><span class="nt">&gt;</span>customer.service.ticket<span class="nt">&lt;/field&gt;</span>
+<span class="hll">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;view_mode&quot;</span><span class="nt">&gt;</span>kanban,tree,form<span class="nt">&lt;/field&gt;</span>
+</span>    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;domain&quot;</span><span class="nt">&gt;</span>[]<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;context&quot;</span><span class="nt">&gt;</span>{}<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>We need to change the form view too, to add the field stage_id to the header:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_form_view&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>customer.service.ticket.form (in customer_service)<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>customer.service.ticket<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;arch&quot;</span> <span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;form&gt;</span>
+            <span class="nt">&lt;header&gt;</span>
+<span class="hll">                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;stage_id&quot;</span> <span class="na">widget=</span><span class="s">&quot;statusbar&quot;</span><span class="nt">/&gt;</span>
+</span>            <span class="nt">&lt;/header&gt;</span>
+            <span class="nt">&lt;sheet&gt;</span>
+                <span class="nt">&lt;group&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;user_id&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;partner_id&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;partner_email&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/group&gt;</span>
+            <span class="nt">&lt;/sheet&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;oe_chatter&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="add-email-features">
+<h2>Add Email features<a class="headerlink" href="#add-email-features" title="Permalink to this headline">¶</a></h2>
+<p>To add email features to our model, first we need to:</p>
+<ol class="arabic simple">
+<li>Add mail module to our module dependencies;</li>
+<li>Add <strong>mail.thread</strong> to the inherit list of your model, same as we did with <strong>base.kanban.abstract</strong></li>
+<li>Improve the view to display the email fields;</li>
+</ol>
+<ol class="arabic simple">
+<li>Add dependence:</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Customer Service&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        ACME Customer Service&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;13.0.1.0.0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;license&#39;</span><span class="p">:</span> <span class="s1">&#39;AGPL-3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;KMEE&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;website&#39;</span><span class="p">:</span> <span class="s1">&#39;www.kmee.com.br&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;depends&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;base_kanban_stage&#39;</span><span class="p">,</span>
+<span class="hll">        <span class="s1">&#39;mail,</span>
+</span>    <span class="p">],</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;security/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;views/customer_service_menu.xml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;views/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;demo&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;demo/customer_service_ticket.xml&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Add <strong>mail.thread</strong> to the inherit list of your model:</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomerServiceTicket</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;customer.service.ticket&#39;</span>
+<span class="hll">    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;base.kanban.abstract&#39;</span><span class="p">,</span> <span class="s1">&#39;mail.thread&#39;</span><span class="p">]</span>
+</span></pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Improve the view;</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_form_view&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>customer.service.ticket.form (in customer_service)<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>customer.service.ticket<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;arch&quot;</span> <span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;form&gt;</span>
+            <span class="nt">&lt;header&gt;</span>
+                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;stage_id&quot;</span> <span class="na">widget=</span><span class="s">&quot;statusbar&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/header&gt;</span>
+            <span class="nt">&lt;sheet&gt;</span>
+                <span class="nt">&lt;group&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;user_id&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;partner_id&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;partner_email&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/group&gt;</span>
+            <span class="nt">&lt;/sheet&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;oe_chatter&quot;</span><span class="nt">&gt;</span>
+<span class="hll">                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;message_follower_ids&quot;</span> <span class="na">widget=</span><span class="s">&quot;mail_followers&quot;</span> <span class="na">groups=</span><span class="s">&quot;base.group_user&quot;</span><span class="nt">/&gt;</span>
+</span><span class="hll">                <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;message_ids&quot;</span> <span class="na">widget=</span><span class="s">&quot;mail_thread&quot;</span><span class="nt">/&gt;</span>
+</span>            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sending-sms">
+<h2>Sending SMS<a class="headerlink" href="#sending-sms" title="Permalink to this headline">¶</a></h2>
+<p>Odoo and Odoo SA has his own provider to send SMS, but we will override this behavior to
+send SMS with the provider of our choice.</p>
+<p>To do that we will create a new module called <strong>sms_nexmo</strong> and we will propose it to OCA.</p>
+<p>Here is an example of how to send SMS via nexmo:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nexmo</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">nexmo.sms</span> <span class="kn">import</span> <span class="n">Sms</span>
+
+<span class="n">sms</span> <span class="o">=</span> <span class="n">Sms</span><span class="p">(</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;60e5d109&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;************NMX&#39;</span><span class="p">))</span>
+
+<span class="n">sms</span><span class="o">.</span><span class="n">send_message</span><span class="p">({</span>
+    <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;Vonage APIs&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="s1">&#39;5535988763663&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello from Vonage SMS API&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Odoo SA has a module <strong>sms</strong> which has two methods that we need to override, here is the Odoo SA code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SmsApi</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">AbstractModel</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;sms.api&#39;</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s1">&#39;SMS API&#39;</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+    <span class="k">def</span> <span class="nf">_contact_iap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">local_endpoint</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="n">account</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">&#39;iap.account&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sms&#39;</span><span class="p">)</span>
+        <span class="n">params</span><span class="p">[</span><span class="s1">&#39;account_token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="n">account_token</span>
+        <span class="n">endpoint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">&#39;ir.config_parameter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sudo</span><span class="p">()</span><span class="o">.</span><span class="n">get_param</span><span class="p">(</span><span class="s1">&#39;sms.endpoint&#39;</span><span class="p">,</span> <span class="n">DEFAULT_ENDPOINT</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">iap</span><span class="o">.</span><span class="n">jsonrpc</span><span class="p">(</span><span class="n">endpoint</span> <span class="o">+</span> <span class="n">local_endpoint</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">_send_sms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+</span>        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;numbers&#39;</span><span class="p">:</span> <span class="n">numbers</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="n">message</span><span class="p">}</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_contact_iap</span><span class="p">(</span><span class="s1">&#39;/iap/message_send&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">_send_sms_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">):</span>
+</span>        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;messages&#39;</span><span class="p">:</span> <span class="n">messages</span><span class="p">}</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_contact_iap</span><span class="p">(</span><span class="s1">&#39;/iap/sms/1/send&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-module-to-be-sent-to-oca">
+<h2>Creating a module to be sent to OCA<a class="headerlink" href="#creating-a-module-to-be-sent-to-oca" title="Permalink to this headline">¶</a></h2>
+<p>This time we will not create the module <strong>sms_nexmo</strong> at local-src folder.
+We will create and send a pull request at OCA project: <a class="reference external" href="https://github.com/OCA/connector-telephony">https://github.com/OCA/connector-telephony</a></p>
+<p>But to To do that, we need to ensure a feel things:</p>
+<ol class="arabic simple" start="0">
+<li>Ensure that</li>
+<li>A fork of this project.</li>
+<li>Add our fork to spec.yml</li>
+<li>Start coding</li>
+<li>Make a pull request</li>
+</ol>
+<div class="section" id="adding-a-forking-a-project">
+<h3>Adding a Forking a project<a class="headerlink" href="#adding-a-forking-a-project" title="Permalink to this headline">¶</a></h3>
+<p>Go to the project, find the fork button on the upper right side of the screen.
+Fork it to your user/organization, and add your remote fork url to spec.yml</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">odoo</span><span class="p">:</span>
+    <span class="nt">modules</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+    <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/odoo/odoo 13.0</span>
+
+<span class="nt">web</span><span class="p">:</span>
+    <span class="nt">modules</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+    <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/OCA/web 13.0</span>
+
+<span class="nt">kmee-server-tools</span><span class="p">:</span>
+    <span class="nt">modules</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;base_kanban_stage&#39;</span><span class="p p-Indicator">]</span>
+    <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/kmee/server-tools 13.0-mig-base_kanban_stage</span>
+
+<span class="nt">connector-telephony</span><span class="p">:</span>
+    <span class="nt">modules</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+    <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/YOUR_REMOTE_HERE/connector-telephony 13.0</span>
+</pre></div>
+</div>
+<p>Run <strong>ak build</strong> and update the <strong>addons path</strong></p>
+</div>
+<div class="section" id="easy-creating-a-oca-module-with-bobtemplates-odoo">
+<h3>Easy creating a OCA module with bobtemplates.odoo<a class="headerlink" href="#easy-creating-a-oca-module-with-bobtemplates-odoo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> PROJECT_ROOT/odoo/external-src/connector-telephony
+<span class="hll">mrbob bobtemplates.odoo:addon
+</span>
+Welcome to mr.bob interactive mode. Before we generate directory structure,
+some questions need to be answered.
+
+Answer with a question mark to display help.
+Values in square brackets at the end of the questions show the
+default value <span class="k">if</span> there is no answer.
+<span class="hll">
+</span><span class="hll">--&gt; Addon name <span class="o">(</span>with underscores<span class="o">)</span>: sms_nexmo
+</span><span class="hll">--&gt; Is it an OCA addon <span class="o">[</span>n<span class="o">]</span>: Y
+</span><span class="hll">--&gt; Summary: Send SMS with Nexmo instead of Odoo SA IAP.
+</span><span class="hll">--&gt; Version <span class="o">[</span><span class="m">12</span>.0.1.0.0<span class="o">]</span>: <span class="m">13</span>.0.1.0.0
+</span><span class="hll">--&gt; Copyright holder name: KMEE
+</span><span class="hll">--&gt; Copyright year: <span class="m">2020</span>
+</span><span class="hll">--&gt; Website: https://github.com/OCA/connector-telephony
+</span></pre></div>
+</div>
+<p>You module sms_nexmo must depend of Odoo SA sms module:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Sms Nexmo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;summary&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        Send SMS with Nexmo instead of Odoo SA IAP.&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;13.0.1.0.0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;license&#39;</span><span class="p">:</span> <span class="s1">&#39;AGPL-3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;KMEE,Odoo Community Association (OCA)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;website&#39;</span><span class="p">:</span> <span class="s1">&#39;https://github.com/OCA/connector-telephony&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;depends&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;sms&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;views/iap_account.xml&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;demo&#39;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extending-odoo-models">
+<h3>Extending Odoo models<a class="headerlink" href="#extending-odoo-models" title="Permalink to this headline">¶</a></h3>
+<p>We will need to change the behavior of two Odoo models:</p>
+<ol class="arabic simple">
+<li><strong>iap.account</strong>: To save the nexmo key and secret;</li>
+<li><strong>sms.api</strong>: To overwrite the methods: _send_sms and _send_sms_batch</li>
+</ol>
+</div>
+<div class="section" id="extending-odoo-models-iap-account">
+<h3>Extending Odoo models: iap.account<a class="headerlink" href="#extending-odoo-models-iap-account" title="Permalink to this headline">¶</a></h3>
+<p>We need to create two new fields at the model iap.account and add it to the form screen.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> PROJECT_ROOT/odoo/external-src/connector-telephony/sms_nexmo
+mrbob bobtemplates.odoo:model
+
+Welcome to mr.bob interactive mode. Before we generate directory structure,
+some questions need to be answered. Answer with a question mark to display help.
+Values in square brackets at the end of the questions show the
+default value <span class="k">if</span> there is no answer.
+
+    --&gt; Odoo version <span class="o">(</span><span class="m">8</span><span class="p">|</span><span class="m">9</span><span class="p">|</span><span class="m">10</span><span class="p">|</span><span class="m">11</span><span class="p">|</span><span class="m">12</span><span class="o">)</span> <span class="o">[</span><span class="m">12</span><span class="o">]</span>: <span class="m">13</span>
+    --&gt; Model name <span class="o">(</span>dotted notation<span class="o">)</span>: iap.account
+    --&gt; Inherit <span class="o">[</span>y<span class="o">]</span>: Y
+    --&gt; Form view <span class="o">[</span>y<span class="o">]</span>: Y
+    --&gt; Search view <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Tree view <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Action and menu entry <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; ACL <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Demo data <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Copyright holder name: KMEE
+    --&gt; Copyright year: <span class="m">2020</span>
+</pre></div>
+</div>
+<p>Adding the two fields to the model is very easy, edit the file: <strong>PROJECT_ROOT/odoo/external-src/connector-telephony/sms_nexmo/models/iap_account.py</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">_</span>
+
+<span class="k">class</span> <span class="nc">IapAccount</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s1">&#39;iap.account&#39;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
+    <span class="n">secret</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To add them to form view, the easy way is to find the view and at developer mode click on View Form View to discover the external id of the main view.</p>
+<p>Only with the external id in hand can we edit the inherited view.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span> <span class="na">id=</span><span class="s">&quot;iap_account_form_view&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>iap.account.form (in sms_nexmo)<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>iap.account<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;inherit_id&quot;</span> <span class="na">ref=</span><span class="s">&quot;iap.iap_account_view_form&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;arch&quot;</span> <span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;account_token&quot;</span> <span class="na">position=</span><span class="s">&quot;after&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;key&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;secret&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>TIP: Always remember to use the complete name: &lt;MODULE&gt;&lt;DOT&gt;&lt;RECORD_ID&gt;</p>
+</div>
+<div class="section" id="overwriting-odoo-model-sms-api">
+<h3>Overwriting Odoo model: sms.api<a class="headerlink" href="#overwriting-odoo-model-sms-api" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> PROJECT_ROOT/odoo/external-src/connector-telephony/sms_nexmo
+mrbob bobtemplates.odoo:model
+
+Welcome to mr.bob interactive mode. Before we generate directory structure,
+some questions need to be answered. Answer with a question mark to display help.
+Values in square brackets at the end of the questions show the
+default value <span class="k">if</span> there is no answer.
+
+    --&gt; Odoo version <span class="o">(</span><span class="m">8</span><span class="p">|</span><span class="m">9</span><span class="p">|</span><span class="m">10</span><span class="p">|</span><span class="m">11</span><span class="p">|</span><span class="m">12</span><span class="o">)</span> <span class="o">[</span><span class="m">12</span><span class="o">]</span>: <span class="m">13</span>
+    --&gt; Model name <span class="o">(</span>dotted notation<span class="o">)</span>: sms.api
+    --&gt; Inherit <span class="o">[</span>y<span class="o">]</span>: Y
+    --&gt; Form view <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Search view <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Tree view <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Action and menu entry <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; ACL <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Demo data <span class="o">[</span>y<span class="o">]</span>: n
+    --&gt; Copyright holder name: KMEE
+    --&gt; Copyright year: <span class="m">2020</span>
+</pre></div>
+</div>
+<p>To send sms we will need an external library: <a class="reference external" href="https://pypi.org/project/nexmo/">https://pypi.org/project/nexmo/</a></p>
+<p>We must also not forget to add it to requirements.txt and run the build command again.</p>
+<p>odoo/requirements.txt</p>
+<p>And from the PROJECT_ROOT</p>
+<p>Now we can use it on our python class:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">_</span>
+<span class="kn">from</span> <span class="nn">nexmo</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">nexmo.sms</span> <span class="kn">import</span> <span class="n">Sms</span>
+
+<span class="k">class</span> <span class="nc">SmsApi</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">AbstractModel</span><span class="p">):</span>
+
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s1">&#39;sms.api&#39;</span>
+
+    <span class="k">def</span> <span class="nf">_send_sms_nexmo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sms</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="n">sms</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+    <span class="k">def</span> <span class="nf">_send_sms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="n">account</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">&#39;iap.account&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nexmo.sms&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">account</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">SmsApi</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_send_sms</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+
+        <span class="n">sms</span> <span class="o">=</span> <span class="n">Sms</span><span class="p">(</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">account</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">account</span><span class="o">.</span><span class="n">secret</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_send_sms_nexmo</span><span class="p">(</span><span class="n">sms</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;Odoo&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="n">numbers</span><span class="p">,</span>
+            <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span>
+        <span class="p">})</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+    <span class="k">def</span> <span class="nf">_send_sms_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">):</span>
+        <span class="n">account</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">&#39;iap.account&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nexmo.sms&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">account</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">SmsApi</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_send_sms_batch</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+
+        <span class="n">sms</span> <span class="o">=</span> <span class="n">Sms</span><span class="p">(</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">account</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">account</span><span class="o">.</span><span class="n">secret</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
+            <span class="n">record</span><span class="o">.</span><span class="n">_send_sms_nexmo</span><span class="p">(</span><span class="n">sms</span><span class="p">,</span> <span class="p">{</span>
+                <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;Odoo&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">],</span>
+            <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="integrate-customer-service-with-sms">
+<h1>Integrate Customer Service with SMS<a class="headerlink" href="#integrate-customer-service-with-sms" title="Permalink to this headline">¶</a></h1>
+<p>Before getting your hands dirty and integrating our module with sms it is important that you understand some things.</p>
+<ol class="arabic simple">
+<li>When we changed the definition of our model so that it inherited from mail.thread. We made him acquire all the functionality of the email module.</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomerServiceTicket</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;customer.service.ticket&#39;</span>
+<span class="hll">    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;base.kanban.abstract&#39;</span><span class="p">,</span> <span class="s1">&#39;mail.thread&#39;</span><span class="p">]</span>
+</span></pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>When installing the Odoo SA <strong>sms</strong> module we added new features to the mail.thread model, making Odoo records able to communicate via sms as well.</li>
+<li>When we create a module sms_nexmo we change de default behavior of sending sms via Odoo SA IAP to send it via Nexmo.</li>
+</ol>
+<div class="section" id="send-customer-service-number-by-sms">
+<h2>Send customer service number by SMS<a class="headerlink" href="#send-customer-service-number-by-sms" title="Permalink to this headline">¶</a></h2>
+<p>We will create a button to allow user to send ticket number to the partner by sms.</p>
+<p>_message_sms</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Luis Felipe Miléo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2020.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
