@@ -156,7 +156,7 @@ From Basis to First Module
 
 
 \chapter{OCA Days - 2020}
-\label{index:oca-days-2020}\label{index:odoo-developer-training}
+\label{index:odoo-developer-training}\label{index:oca-days-2020}
 {\hspace*{\fill}\includegraphics{{oca-days-logo}.png}\hspace*{\fill}}
 
 
@@ -385,15 +385,12 @@ Install Akretion AK
 
 \section{Setup Odoo Environment}
 \label{index:setup-odoo-environment}
-
-\subsection{Setup Odoo Environment}
-\label{index:id2}
 We will start from a pre-configured repository. To know more about it you must study a
 little a about the camp2camp docker-odoo-project, docker itself and other used components
 like postgresql and traefik.
 
 \begin{Verbatim}[commandchars=\\\{\}]
-git clone https://github.com/kmee/oca\PYGZhy{}days\PYGZhy{}2020\PYGZhy{}odoo\PYGZhy{}developer\PYGZhy{}source.git \PYGZhy{}\PYGZhy{}branch\PYG{o}{=}template
+git clone https://github.com/kmee/oca\PYGZhy{}days\PYGZhy{}2020\PYGZhy{}odoo\PYGZhy{}developer.git \PYGZhy{}\PYGZhy{}branch\PYG{o}{=}template
 \PYG{n+nb}{cd} oca\PYGZhy{}days\PYGZhy{}2020\PYGZhy{}odoo\PYGZhy{}developer\PYGZhy{}source
 \end{Verbatim}
 
@@ -443,9 +440,7 @@ docker\PYGZhy{}compose build
 \label{index:running-odoo}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{} In the project\PYGZsq{}s root folder}
-
 docker\PYGZhy{}compose up
-
 \PYG{c+c1}{\PYGZsh{} To stop press CTRL + C}
 \end{Verbatim}
 
@@ -467,6 +462,8 @@ Copy the link.
 Edit spec.yml
 
 \end{enumerate}
+
+Editing spec.yml:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 odoo:
@@ -507,11 +504,7 @@ services:
     environment:
       \PYGZhy{} \PYG{n+nv}{PYTHONDONTWRITEBYTECODE}\PYG{o}{=}True
       \PYGZhy{} \PYG{n+nv}{LOCAL\PYGZus{}USER\PYGZus{}ID}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}UID}
-      \PYGZhy{} \PYG{n+nv}{RUNNING\PYGZus{}ENV}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}ENV}
-      \PYGZhy{} \PYG{n+nv}{MARABUNTA\PYGZus{}MODE}\PYG{o}{=}demo
-      \PYGZhy{} \PYG{n+nv}{DB\PYGZus{}HOST}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}PGHOST}
-      \PYGZhy{} \PYG{n+nv}{DB\PYGZus{}NAME}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}PGDATABASE}
-      \PYGZhy{} \PYG{n+nv}{DB\PYGZus{}USER}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}PGUSER}
+      \PYG{o}{[}...\PYG{o}{]}
       \PYGZhy{} \PYG{n+nv}{DB\PYGZus{}PASS}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}PGPASSWORD}
       \PYGZhy{} \PYG{n+nv}{PGHOST}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}PGHOST}
       \PYGZhy{} \PYG{n+nv}{PGDATABASE}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}PGDATABASE}
@@ -525,9 +518,7 @@ services:
     volumes:
       \PYGZhy{} ./odoo:/odoo
       \PYGZhy{} ./data/addons:/data/odoo/addons
-      \PYGZhy{} ./data/filestore:/data/odoo/filestore
-      \PYGZhy{} ./data/sessions:/data/odoo/sessions
-version: \PYG{l+s+s1}{\PYGZsq{}3.7\PYGZsq{}}
+      \PYG{o}{[}...\PYG{o}{]}
 \end{Verbatim}
 
 Lets auto install web\_responsive with a migration script, edit you PROJECT\_ROOT/odoo/migration.yml
@@ -538,14 +529,7 @@ migration:
     install\PYGZus{}command: odoo
   versions:
     \PYGZhy{} version: \PYG{l+m}{13}.0.0.0.0
-      operations:
-        pre:
-          \PYGZhy{} \PYG{l+s+s2}{\PYGZdq{}sh \PYGZhy{}c \PYGZsq{}psql \PYGZhy{}c \PYGZbs{}\PYGZdq{}CREATE EXTENSION pg\PYGZus{}trgm;\PYGZbs{}\PYGZdq{}\PYGZsq{}\PYGZdq{}}
-        post:
-          \PYGZhy{} anthem songs.install.base::main
-      addons:
-        upgrade:
-          \PYGZhy{} contacts
+      \PYG{o}{[}...\PYG{o}{]}
       modes:
         demo:
           operations:
@@ -561,7 +545,7 @@ migration:
 \label{index:coding-our-first-module}
 
 \section{Coding our first module}
-\label{index:id3}
+\label{index:id2}
 In our example module we will create an application for customer service management:
 with Kanban and personalized workflow, integration with email and sms.
 
@@ -671,7 +655,6 @@ mrbob bobtemplates.odoo:model
 Welcome to mr.bob interactive mode. Before we generate directory structure, some questions
 need to be answered. Answer with a question mark to display help. Values in square
 brackets at the end of the questions show the default value \PYG{k}{if} there is no answer.
-
 \PYGZhy{}\PYGZhy{}\PYGZgt{} Odoo version \PYG{o}{(}\PYG{l+m}{8}\PYG{p}{\textbar{}}\PYG{l+m}{9}\PYG{p}{\textbar{}}\PYG{l+m}{10}\PYG{p}{\textbar{}}\PYG{l+m}{11}\PYG{p}{\textbar{}}\PYG{l+m}{12}\PYG{o}{)} \PYG{o}{[}\PYG{l+m}{12}\PYG{o}{]}: \PYG{l+m}{13}
 \PYGZhy{}\PYGZhy{}\PYGZgt{} Model name \PYG{o}{(}dotted notation\PYG{o}{)}: customer.service.ticket
 \PYGZhy{}\PYGZhy{}\PYGZgt{} Inherit \PYG{o}{[}y\PYG{o}{]}: n
@@ -727,13 +710,11 @@ Inside de folder views, create a new file: \textbf{customer\_service/views/custo
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}odoo}\PYG{n+nt}{\PYGZgt{}}
-
     \PYG{n+nt}{\PYGZlt{}record} \PYG{n+na}{model=}\PYG{l+s}{\PYGZdq{}ir.ui.menu\PYGZdq{}} \PYG{n+na}{id=}\PYG{l+s}{\PYGZdq{}customer\PYGZus{}service\PYGZus{}main\PYGZus{}menu\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}Customer Service\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}sequence\PYGZdq{}} \PYG{n+na}{eval=}\PYG{l+s}{\PYGZdq{}40\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}web\PYGZus{}icon\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}customer\PYGZus{}service,static/description/icon.png\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
     \PYG{n+nt}{\PYGZlt{}/record\PYGZgt{}}
-
 \PYG{n+nt}{\PYGZlt{}/odoo\PYGZgt{}}
 \end{Verbatim}
 
@@ -755,10 +736,7 @@ Edit the module manifest to import the main menu:
         \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{views/customer\PYGZus{}service\PYGZus{}menu.xml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{views/customer\PYGZus{}service\PYGZus{}ticket.xml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
     \PYG{p}{]}\PYG{p}{,}
-    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{demo}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}
-        \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{demo/customer\PYGZus{}service\PYGZus{}ticket.xml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
-    \PYG{p}{]}\PYG{p}{,}
-\PYG{p}{\PYGZcb{}}
+    \PYG{p}{[}\PYG{o}{.}\PYG{o}{.}\PYG{o}{.}\PYG{p}{]}
 \end{Verbatim}
 
 Ensure that you put it before the customer\_service\_ticket, \textbf{the order matters}.
@@ -938,10 +916,6 @@ The first step is to add base\_kanban\_stage to our module dependencies list. To
         \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{views/customer\PYGZus{}service\PYGZus{}menu.xml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{views/customer\PYGZus{}service\PYGZus{}ticket.xml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
     \PYG{p}{]}\PYG{p}{,}
-    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{demo}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}
-        \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{demo/customer\PYGZus{}service\PYGZus{}ticket.xml}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
-    \PYG{p}{]}\PYG{p}{,}
-\PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 
@@ -1007,8 +981,6 @@ We need to change the form view too, to add the field stage\_id to the header:
             \PYG{n+nt}{\PYGZlt{}/sheet\PYGZgt{}}
             \PYG{n+nt}{\PYGZlt{}div} \PYG{n+na}{class=}\PYG{l+s}{\PYGZdq{}oe\PYGZus{}chatter\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}\PYG{n+nt}{\PYGZlt{}/div\PYGZgt{}}
         \PYG{n+nt}{\PYGZlt{}/form\PYGZgt{}}
-    \PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
-\PYG{n+nt}{\PYGZlt{}/record\PYGZgt{}}
 \end{Verbatim}
 
 
@@ -1317,7 +1289,12 @@ Only with the external id in hand can we edit the inherited view.
 \PYG{n+nt}{\PYGZlt{}/record\PYGZgt{}}
 \end{Verbatim}
 
+\begin{notice}{note}{Note:}\begin{itemize}
+\item {} 
 TIP: Always remember to use the complete name: \textless{}MODULE\textgreater{}\textless{}DOT\textgreater{}\textless{}RECORD\_ID\textgreater{}
+
+\end{itemize}
+\end{notice}
 
 
 \subsection{Overwriting Odoo model: sms.api}
@@ -1350,7 +1327,15 @@ We must also not forget to add it to requirements.txt and run the build command 
 
 odoo/requirements.txt
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nv}{nexmo}\PYG{o}{=}\PYG{o}{=}\PYG{l+m}{2}.5.2
+\end{Verbatim}
+
 And from the PROJECT\_ROOT
+
+\begin{Verbatim}[commandchars=\\\{\}]
+docker\PYGZhy{}compose build
+\end{Verbatim}
 
 Now we can use it on our python class:
 
@@ -1378,24 +1363,26 @@ Now we can use it on our python class:
             \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{to}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{numbers}\PYG{p}{,}
             \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{text}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{message}\PYG{p}{,}
         \PYG{p}{\PYGZcb{}}\PYG{p}{)}
+\end{Verbatim}
 
-    \PYG{n+nd}{@api}\PYG{o}{.}\PYG{n}{model}
-    \PYG{k}{def} \PYG{n+nf}{\PYGZus{}send\PYGZus{}sms\PYGZus{}batch}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{messages}\PYG{p}{)}\PYG{p}{:}
-        \PYG{n}{account} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{env}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{iap.account}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nexmo.sms}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{account}\PYG{p}{:}
-            \PYG{k}{return} \PYG{n+nb}{super}\PYG{p}{(}\PYG{n}{SmsApi}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{p}{)}\PYG{o}{.}\PYG{n}{\PYGZus{}send\PYGZus{}sms\PYGZus{}batch}\PYG{p}{(}\PYG{n}{messages}\PYG{p}{)}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@api}\PYG{o}{.}\PYG{n}{model}
+\PYG{k}{def} \PYG{n+nf}{\PYGZus{}send\PYGZus{}sms\PYGZus{}batch}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{messages}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{account} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{env}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{iap.account}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nexmo.sms}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{account}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n+nb}{super}\PYG{p}{(}\PYG{n}{SmsApi}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{p}{)}\PYG{o}{.}\PYG{n}{\PYGZus{}send\PYGZus{}sms\PYGZus{}batch}\PYG{p}{(}\PYG{n}{messages}\PYG{p}{)}
 
-        \PYG{n}{sms} \PYG{o}{=} \PYG{n}{Sms}\PYG{p}{(}\PYG{n}{Client}\PYG{p}{(}\PYG{n}{key}\PYG{o}{=}\PYG{n}{account}\PYG{o}{.}\PYG{n}{key}\PYG{p}{,} \PYG{n}{secret}\PYG{o}{=}\PYG{n}{account}\PYG{o}{.}\PYG{n}{secret}\PYG{p}{)}\PYG{p}{)}
-        \PYG{k}{for} \PYG{n}{record} \PYG{o+ow}{in} \PYG{n}{messages}\PYG{p}{:}
-            \PYG{n}{record}\PYG{o}{.}\PYG{n}{\PYGZus{}send\PYGZus{}sms\PYGZus{}nexmo}\PYG{p}{(}\PYG{n}{sms}\PYG{p}{,} \PYG{p}{\PYGZob{}}
-                \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{from}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Odoo}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
-                \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{to}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{record}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{number}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,}
-                \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{text}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{record}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{content}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,}
-            \PYG{p}{\PYGZcb{}}\PYG{p}{)}
+    \PYG{n}{sms} \PYG{o}{=} \PYG{n}{Sms}\PYG{p}{(}\PYG{n}{Client}\PYG{p}{(}\PYG{n}{key}\PYG{o}{=}\PYG{n}{account}\PYG{o}{.}\PYG{n}{key}\PYG{p}{,} \PYG{n}{secret}\PYG{o}{=}\PYG{n}{account}\PYG{o}{.}\PYG{n}{secret}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{record} \PYG{o+ow}{in} \PYG{n}{messages}\PYG{p}{:}
+        \PYG{n}{record}\PYG{o}{.}\PYG{n}{\PYGZus{}send\PYGZus{}sms\PYGZus{}nexmo}\PYG{p}{(}\PYG{n}{sms}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{from}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Odoo}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+            \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{to}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{record}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{number}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,}
+            \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{text}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{record}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{content}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{}}\PYG{p}{)}
 \end{Verbatim}
 
 
-\chapter{Integrate Customer Service with SMS}
+\section{Integrate Customer Service with SMS}
 \label{index:integrate-customer-service-with-sms}
 Before getting your hands dirty and integrating our module with sms it is important that you understand some things.
 \begin{enumerate}
@@ -1421,11 +1408,176 @@ When we create a module sms\_nexmo we change de default behavior of sending sms 
 \end{enumerate}
 
 
-\section{Send customer service number by SMS}
+\subsection{Send customer service number by SMS}
 \label{index:send-customer-service-number-by-sms}
-We will create a button to allow user to send ticket number to the partner by sms.
+We will create a button to allow user to send ticket number to the partner by sms. But before that we will need the ticket number.
 
-\_message\_sms
+Lets add a sequence to our model, by creating:
+\begin{enumerate}
+\item {} 
+Folder data at \textbf{PROJECT\_ROOT/odoo/local-src/customer\_service/data}
+
+\item {} 
+A file: \textbf{PROJECT\_ROOT/odoo/local-src/customer\_service/data/ir\_sequence\_data.xml}
+
+\end{enumerate}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item {} 
+Add it to the module manifest.
+
+\end{enumerate}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}odoo}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}data} \PYG{n+na}{noupdate=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+
+        \PYG{n+nt}{\PYGZlt{}record} \PYG{n+na}{id=}\PYG{l+s}{\PYGZdq{}customer\PYGZus{}service\PYGZus{}sequence\PYGZdq{}} \PYG{n+na}{model=}\PYG{l+s}{\PYGZdq{}ir.sequence\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}CustomerService\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}code\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}customer.service\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}prefix\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}CS/\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}padding\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}7\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/record\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}/data\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/odoo\PYGZgt{}}
+\end{Verbatim}
+
+Auto create a sequence when creating a new record:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{odoo} \PYG{k+kn}{import} \PYG{n}{api}\PYG{p}{,} \PYG{n}{fields}\PYG{p}{,} \PYG{n}{models}\PYG{p}{,} \PYG{n}{\PYGZus{}}
+
+\PYG{k}{class} \PYG{n+nc}{CustomerServiceTicket}\PYG{p}{(}\PYG{n}{models}\PYG{o}{.}\PYG{n}{Model}\PYG{p}{)}\PYG{p}{:}
+
+    \PYG{n}{\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{customer.service.ticket}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{\PYGZus{}inherit} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{base.kanban.abstract}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{mail.thread}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+
+    \PYG{n}{\PYGZus{}description} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Customer Service Ticket}\PYG{l+s+s1}{\PYGZsq{}}  \PYG{c+c1}{\PYGZsh{} TODO}
+
+    \PYG{n}{code} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Char}\PYG{p}{(}
+        \PYG{n}{readonly}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,}
+        \PYG{n}{default}\PYG{o}{=}\PYG{k}{lambda} \PYG{n+nb+bp}{self}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{env}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ir.sequence}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{next\PYGZus{}by\PYGZus{}code}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{customer.service}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{n}{name} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Char}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{description} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Html}\PYG{p}{(}\PYG{n}{sanitize\PYGZus{}style}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{user\PYGZus{}id} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Many2one}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{res.users}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{partner\PYGZus{}id} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Many2one}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{res.partner}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{partner\PYGZus{}email} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Char}\PYG{p}{(}\PYG{n}{related}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{partner\PYGZus{}id.email}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}
+
+Add the new field to the form view:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}record} \PYG{n+na}{model=}\PYG{l+s}{\PYGZdq{}ir.ui.view\PYGZdq{}} \PYG{n+na}{id=}\PYG{l+s}{\PYGZdq{}customer\PYGZus{}service\PYGZus{}ticket\PYGZus{}form\PYGZus{}view\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}customer.service.ticket.form (in customer\PYGZus{}service)\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}model\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}customer.service.ticket\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}arch\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xml\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}form}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}header}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}stage\PYGZus{}id\PYGZdq{}} \PYG{n+na}{widget=}\PYG{l+s}{\PYGZdq{}statusbar\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/header\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}sheet}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}group}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}code\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}description\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}user\PYGZus{}id\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}partner\PYGZus{}id\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}partner\PYGZus{}email\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/group\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/sheet\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}div} \PYG{n+na}{class=}\PYG{l+s}{\PYGZdq{}oe\PYGZus{}chatter\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}message\PYGZus{}follower\PYGZus{}ids\PYGZdq{}} \PYG{n+na}{widget=}\PYG{l+s}{\PYGZdq{}mail\PYGZus{}followers\PYGZdq{}} \PYG{n+na}{groups=}\PYG{l+s}{\PYGZdq{}base.group\PYGZus{}user\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}message\PYGZus{}ids\PYGZdq{}} \PYG{n+na}{widget=}\PYG{l+s}{\PYGZdq{}mail\PYGZus{}thread\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/div\PYGZgt{}}
+\end{Verbatim}
+
+Add the new field to the tree view:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}record} \PYG{n+na}{model=}\PYG{l+s}{\PYGZdq{}ir.ui.view\PYGZdq{}} \PYG{n+na}{id=}\PYG{l+s}{\PYGZdq{}customer\PYGZus{}service\PYGZus{}ticket\PYGZus{}tree\PYGZus{}view\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}customer.service.ticket.tree (in customer\PYGZus{}service)\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}model\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}customer.service.ticket\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}arch\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xml\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}tree}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}code\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}user\PYGZus{}id\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}partner\PYGZus{}id\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/tree\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/record\PYGZgt{}}
+\end{Verbatim}
+
+
+\subsection{Creating a button to send sms}
+\label{index:creating-a-button-to-send-sms}\begin{enumerate}
+\item {} 
+Add the button to the view
+
+\item {} 
+Create the method at the model
+
+\end{enumerate}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}record} \PYG{n+na}{model=}\PYG{l+s}{\PYGZdq{}ir.ui.view\PYGZdq{}} \PYG{n+na}{id=}\PYG{l+s}{\PYGZdq{}customer\PYGZus{}service\PYGZus{}ticket\PYGZus{}form\PYGZus{}view\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}customer.service.ticket.form (in customer\PYGZus{}service)\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}model\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}customer.service.ticket\PYG{n+nt}{\PYGZlt{}/field\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}arch\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}xml\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}form}\PYG{n+nt}{\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}header}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}stage\PYGZus{}id\PYGZdq{}} \PYG{n+na}{widget=}\PYG{l+s}{\PYGZdq{}statusbar\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}button} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}send\PYGZus{}number\PYGZus{}by\PYGZus{}sms\PYGZdq{}} \PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}object\PYGZdq{}} \PYG{n+na}{string=}\PYG{l+s}{\PYGZdq{}Send Object by SMS\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}/header\PYGZgt{}}
+            \PYG{n+nt}{\PYGZlt{}sheet}\PYG{n+nt}{\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}group}\PYG{n+nt}{\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}code\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}description\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}user\PYGZus{}id\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}partner\PYGZus{}id\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                    \PYG{n+nt}{\PYGZlt{}field} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}partner\PYGZus{}email\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+                \PYG{n+nt}{\PYGZlt{}/group\PYGZgt{}}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{odoo} \PYG{k+kn}{import} \PYG{n}{api}\PYG{p}{,} \PYG{n}{fields}\PYG{p}{,} \PYG{n}{models}\PYG{p}{,} \PYG{n}{\PYGZus{}}
+
+\PYG{k}{class} \PYG{n+nc}{CustomerServiceTicket}\PYG{p}{(}\PYG{n}{models}\PYG{o}{.}\PYG{n}{Model}\PYG{p}{)}\PYG{p}{:}
+
+    \PYG{n}{\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{customer.service.ticket}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{\PYGZus{}inherit} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{base.kanban.abstract}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{mail.thread}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+
+    \PYG{n}{\PYGZus{}description} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Customer Service Ticket}\PYG{l+s+s1}{\PYGZsq{}}  \PYG{c+c1}{\PYGZsh{} TODO}
+
+    \PYG{n}{code} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Char}\PYG{p}{(}
+        \PYG{n}{readonly}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,}
+        \PYG{n}{default}\PYG{o}{=}\PYG{k}{lambda} \PYG{n+nb+bp}{self}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{env}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ir.sequence}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{next\PYGZus{}by\PYGZus{}code}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{customer.service}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{n}{name} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Char}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{description} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Html}\PYG{p}{(}\PYG{n}{sanitize\PYGZus{}style}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{user\PYGZus{}id} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Many2one}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{res.users}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{partner\PYGZus{}id} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Many2one}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{res.partner}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{partner\PYGZus{}email} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Char}\PYG{p}{(}\PYG{n}{related}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{partner\PYGZus{}id.email}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{send\PYGZus{}number\PYGZus{}by\PYGZus{}sms}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{record} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{p}{:}
+            \PYG{n}{record}\PYG{o}{.}\PYG{n}{\PYGZus{}message\PYGZus{}sms}\PYG{p}{(}
+                \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{OCA days: Your ticket number is }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{record}\PYG{o}{.}\PYG{n}{code}\PYG{p}{)}\PYG{p}{,}
+                \PYG{n}{partner\PYGZus{}ids}\PYG{o}{=}\PYG{n}{record}\PYG{o}{.}\PYG{n}{partner\PYGZus{}id}\PYG{o}{.}\PYG{n}{ids}
+            \PYG{p}{)}
+\end{Verbatim}
+
+
+\chapter{Questions and answers}
+\label{index:questions-and-answers}
+
+\section{Thank you to the OCA Sponsors}
+\label{index:thank-you-to-the-oca-sponsors}
+{\hspace*{\fill}\includegraphics{{sponsors}.jpg}\hspace*{\fill}}
 
 
 

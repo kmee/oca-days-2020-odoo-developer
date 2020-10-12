@@ -2,7 +2,6 @@ Odoo Developer Training
 =======================
 From Basis to First Module
 
-
 OCA Days - 2020
 ----------------
 
@@ -130,7 +129,6 @@ Do a lot of thinks but, in this training we will gonna use it for only two:
 1. Download the addons
 2. Generate addons path
 
-
 .. code-block:: shell
 
     #Install with a normal user
@@ -151,16 +149,13 @@ You will need to ensure a few things:
 Setup Odoo Environment
 ----------------------
 
-Setup Odoo Environment
-######################
-
 We will start from a pre-configured repository. To know more about it you must study a
 little a about the camp2camp docker-odoo-project, docker itself and other used components
 like postgresql and traefik.
 
 .. code-block:: shell
 
-    git clone https://github.com/kmee/oca-days-2020-odoo-developer-source.git --branch=template
+    git clone https://github.com/kmee/oca-days-2020-odoo-developer.git --branch=template
     cd oca-days-2020-odoo-developer-source
 
 .. nextslide::
@@ -212,9 +207,7 @@ Running Odoo
 .. code-block:: shell
 
     # In the project's root folder
-
     docker-compose up
-
     # To stop press CTRL + C
 
 
@@ -227,6 +220,10 @@ Now that we have the Odoo up and running let's add a new project to improve it.
 2. Open the module **web_responsive**, from Tecnativa and LasLabs, go to the website(https://github.com/OCA/web)
 3. Copy the link.
 4. Edit spec.yml
+
+.. nextslide::
+
+Editing spec.yml:
 
 .. code-block:: shell
     :emphasize-lines: 5-7
@@ -270,18 +267,14 @@ TIP: This will add all the modules of the project OCA/web, if you just want the 
 Edit your docker compose to update the ADDONS_PATH
 
 .. code-block:: shell
-    :emphasize-lines: 16
+    :emphasize-lines: 12
 
     services:
       odoo:
         environment:
           - PYTHONDONTWRITEBYTECODE=True
           - LOCAL_USER_ID=$UID
-          - RUNNING_ENV=$ENV
-          - MARABUNTA_MODE=demo
-          - DB_HOST=$PGHOST
-          - DB_NAME=$PGDATABASE
-          - DB_USER=$PGUSER
+          [...]
           - DB_PASS=$PGPASSWORD
           - PGHOST=$PGHOST
           - PGDATABASE=$PGDATABASE
@@ -295,30 +288,21 @@ Edit your docker compose to update the ADDONS_PATH
         volumes:
           - ./odoo:/odoo
           - ./data/addons:/data/odoo/addons
-          - ./data/filestore:/data/odoo/filestore
-          - ./data/sessions:/data/odoo/sessions
-    version: '3.7'
+          [...]
 
 .. nextslide::
 
 Lets auto install web_responsive with a migration script, edit you PROJECT_ROOT/odoo/migration.yml
 
 .. code-block:: shell
-    :emphasize-lines: 19-21
+    :emphasize-lines: 12-16
 
     migration:
       options:
         install_command: odoo
       versions:
         - version: 13.0.0.0.0
-          operations:
-            pre:
-              - "sh -c 'psql -c \"CREATE EXTENSION pg_trgm;\"'"
-            post:
-              - anthem songs.install.base::main
-          addons:
-            upgrade:
-              - contacts
+          [...]
           modes:
             demo:
               operations:
@@ -448,7 +432,6 @@ With the help o bob.odoo we will create our first Odoo model with accompanying f
     Welcome to mr.bob interactive mode. Before we generate directory structure, some questions
     need to be answered. Answer with a question mark to display help. Values in square
     brackets at the end of the questions show the default value if there is no answer.
-
     --> Odoo version (8|9|10|11|12) [12]: 13
     --> Model name (dotted notation): customer.service.ticket
     --> Inherit [y]: n
@@ -503,13 +486,11 @@ Inside de folder views, create a new file: **customer_service/views/customer_ser
 
     <?xml version="1.0" encoding="utf-8"?>
     <odoo>
-
         <record model="ir.ui.menu" id="customer_service_main_menu">
             <field name="name">Customer Service</field>
             <field name="sequence" eval="40"/>
             <field name="web_icon">customer_service,static/description/icon.png</field>
         </record>
-
     </odoo>
 
 .. nextslide::
@@ -534,10 +515,8 @@ Edit the module manifest to import the main menu:
             'views/customer_service_menu.xml',
             'views/customer_service_ticket.xml',
         ],
-        'demo': [
-            'demo/customer_service_ticket.xml',
-        ],
-    }
+        [...]
+
 
 Ensure that you put it before the customer_service_ticket, **the order matters**.
 
@@ -658,7 +637,7 @@ Add the all the new fields to the form view:
 Add the some fields to the tree view:
 
 .. code-block:: xml
-    :emphasize-lines: 7-9
+    :emphasize-lines: 7-8
 
     <record model="ir.ui.view" id="customer_service_ticket_tree_view">
         <field name="name">customer.service.ticket.tree (in customer_service)</field>
@@ -725,10 +704,6 @@ The first step is to add base_kanban_stage to our module dependencies list. To d
             'views/customer_service_menu.xml',
             'views/customer_service_ticket.xml',
         ],
-        'demo': [
-            'demo/customer_service_ticket.xml',
-        ],
-    }
 
 
 Inherit base.kanban.abstract in our model
@@ -801,8 +776,8 @@ We need to change the form view too, to add the field stage_id to the header:
                 </sheet>
                 <div class="oe_chatter"></div>
             </form>
-        </field>
-    </record>
+
+
 
 Add Email features
 ------------------
@@ -1096,7 +1071,9 @@ Only with the external id in hand can we edit the inherited view.
         </field>
     </record>
 
-TIP: Always remember to use the complete name: <MODULE><DOT><RECORD_ID>
+.. note::
+
+    * TIP: Always remember to use the complete name: <MODULE><DOT><RECORD_ID>
 
 Overwriting Odoo model: sms.api
 ###############################
@@ -1132,12 +1109,16 @@ We must also not forget to add it to requirements.txt and run the build command 
 odoo/requirements.txt
 
 .. code-block:: shell
+
     nexmo==2.5.2
 
 And from the PROJECT_ROOT
 
 .. code-block:: shell
+
     docker-compose build
+
+.. nextslide::
 
 Now we can use it on our python class:
 
@@ -1167,6 +1148,10 @@ Now we can use it on our python class:
                 'text': message,
             })
 
+.. nextslide::
+
+.. code-block:: python
+
         @api.model
         def _send_sms_batch(self, messages):
             account = self.env['iap.account'].get('nexmo.sms')
@@ -1183,7 +1168,7 @@ Now we can use it on our python class:
 
 
 Integrate Customer Service with SMS
-===================================
+-----------------------------------
 
 Before getting your hands dirty and integrating our module with sms it is important that you understand some things.
 
@@ -1197,14 +1182,190 @@ Before getting your hands dirty and integrating our module with sms it is import
         _name = 'customer.service.ticket'
         _inherit = ['base.kanban.abstract', 'mail.thread']
 
+
+.. nextslide::
+
 2. When installing the Odoo SA **sms** module we added new features to the mail.thread model, making Odoo records able to communicate via sms as well.
 3. When we create a module sms_nexmo we change de default behavior of sending sms via Odoo SA IAP to send it via Nexmo.
 
 
 Send customer service number by SMS
------------------------------------
+###################################
 
-We will create a button to allow user to send ticket number to the partner by sms.
+We will create a button to allow user to send ticket number to the partner by sms. But before that we will need the ticket number.
+
+Lets add a sequence to our model, by creating:
+
+1. Folder data at **PROJECT_ROOT/odoo/local-src/customer_service/data**
+2. A file: **PROJECT_ROOT/odoo/local-src/customer_service/data/ir_sequence_data.xml**
+
+.. nextslide::
+
+3. Add it to the module manifest.
+
+.. code-block:: xml
+    :emphasize-lines: 4
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <data noupdate="1">
+
+            <record id="customer_service_sequence" model="ir.sequence">
+                <field name="name">CustomerService</field>
+                <field name="code">customer.service</field>
+                <field name="prefix">CS/</field>
+                <field name="padding">7</field>
+            </record>
+
+        </data>
+    </odoo>
+
+.. nextslide::
+
+Auto create a sequence when creating a new record:
+
+.. code-block:: python
+    :emphasize-lines: 10
+
+    from odoo import api, fields, models, _
+
+    class CustomerServiceTicket(models.Model):
+
+        _name = 'customer.service.ticket'
+        _inherit = ['base.kanban.abstract', 'mail.thread']
+
+        _description = 'Customer Service Ticket'  # TODO
+
+        code = fields.Char(
+            readonly=True,
+            default=lambda self: self.env['ir.sequence'].next_by_code('customer.service'))
+        )
+        name = fields.Char()
+        description = fields.Html(sanitize_style=True)
+        user_id = fields.Many2one('res.users')
+        partner_id = fields.Many2one('res.partner')
+        partner_email = fields.Char(related='partner_id.email')
+
+.. nextslide::
+
+Add the new field to the form view:
+
+.. code-block:: xml
+    :emphasize-lines: 11
+
+    <record model="ir.ui.view" id="customer_service_ticket_form_view">
+        <field name="name">customer.service.ticket.form (in customer_service)</field>
+        <field name="model">customer.service.ticket</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="stage_id" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="user_id"/>
+                        <field name="partner_id"/>
+                        <field name="partner_email"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
 
 
-_message_sms
+.. nextslide::
+
+Add the new field to the tree view:
+
+.. code-block:: xml
+    :emphasize-lines: 6
+
+    <record model="ir.ui.view" id="customer_service_ticket_tree_view">
+        <field name="name">customer.service.ticket.tree (in customer_service)</field>
+        <field name="model">customer.service.ticket</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="partner_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+Creating a button to send sms
+#############################
+
+1. Add the button to the view
+2. Create the method at the model
+
+.. code-block:: xml
+    :emphasize-lines: 8
+
+    <record model="ir.ui.view" id="customer_service_ticket_form_view">
+        <field name="name">customer.service.ticket.form (in customer_service)</field>
+        <field name="model">customer.service.ticket</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="stage_id" widget="statusbar"/>
+                    <button name="send_number_by_sms" type="object" string="Send Object by SMS"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="user_id"/>
+                        <field name="partner_id"/>
+                        <field name="partner_email"/>
+                    </group>
+
+
+.. nextslide::
+
+.. code-block:: python
+    :emphasize-lines: 10-13
+
+    from odoo import api, fields, models, _
+
+    class CustomerServiceTicket(models.Model):
+
+        _name = 'customer.service.ticket'
+        _inherit = ['base.kanban.abstract', 'mail.thread']
+
+        _description = 'Customer Service Ticket'  # TODO
+
+        code = fields.Char(
+            readonly=True,
+            default=lambda self: self.env['ir.sequence'].next_by_code('customer.service'))
+        )
+        name = fields.Char()
+        description = fields.Html(sanitize_style=True)
+        user_id = fields.Many2one('res.users')
+        partner_id = fields.Many2one('res.partner')
+        partner_email = fields.Char(related='partner_id.email')
+
+        def send_number_by_sms(self):
+            for record in self:
+                record._message_sms(
+                    'OCA days: Your ticket number is {}'.format(record.code),
+                    partner_ids=record.partner_id.ids
+                )
+
+
+Questions and answers
+=====================
+
+Thank you to the OCA Sponsors
+-----------------------------
+
+.. image:: images/sponsors.jpg
+    :align: center
+    :height: 500px
+    :width: 550px
