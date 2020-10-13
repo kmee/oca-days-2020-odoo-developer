@@ -310,8 +310,8 @@ To auto install web_responsive with a migration script, edit you PROJECT_ROOT/od
                   - anthem songs.install.demo::main
         - version: 13.0.0.0.1
           addons:
+            upgrade:
               - web_responsive
-
 
 Coding our first module
 =======================
