@@ -208,6 +208,8 @@ Running Odoo
     docker-compose up
     # To stop press CTRL + C
 
+Check https://odoo.localhost
+
 
 Adding OCA projects / modules
 -----------------------------
