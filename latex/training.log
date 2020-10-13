@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.5)  13 OCT 2020 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.5)  13 OCT 2020 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -640,15 +640,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 291--297
 
  []
 
-<eco.png, id=203, 817.0525pt x 368.37625pt>
+<eco.png, id=203, 771.88374pt x 308.15125pt>
 File: eco.png Graphic file (type png)
 <use eco.png>
 Package pdftex.def Info: eco.png  used on input line 301.
-(pdftex.def)             Requested size: 817.05052pt x 368.37534pt.
+(pdftex.def)             Requested size: 771.88185pt x 308.15048pt.
 File: eco.png Graphic file (type png)
 <use eco.png>
 Package pdftex.def Info: eco.png  used on input line 301.
-(pdftex.def)             Requested size: 469.755pt x 211.79782pt.
+(pdftex.def)             Requested size: 469.755pt x 187.53468pt.
 [9] [10 <./eco.png>]
 Chapter 5.
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 31
@@ -730,7 +730,7 @@ re/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/
 type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utm
 b8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on training.pdf (35 pages, 428345 bytes).
+Output written on training.pdf (35 pages, 423406 bytes).
 PDF statistics:
  438 PDF objects out of 1000 (max. 8388607)
  380 compressed objects within 4 object streams
