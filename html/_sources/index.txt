@@ -7,8 +7,6 @@ OCA Days - 2020
 
 .. image:: images/oca-days-logo.png
     :align: center
-    :height: 550px
-    :width: 500px
 
 Luis Felipe Miléo
 -----------------
@@ -25,7 +23,7 @@ Luis Felipe Miléo
 
 .. note::
 
-     * Fell free to contact me after the presentation at OCA discord channel. I will be very happy to clarify any remaining doubts.
+     * Fell free to contact me after the presentation at OCA discord channel. I will be glad to clarify any remaining doubts.
 
 Agenda
 ------
@@ -89,7 +87,7 @@ Docker environment
 Docker environment
 ------------------
 
-There are many ways to run Odoo, it's important that you know how to deploy it manually too because if you have a problem with docker, you will really need to know the basics.
+Although there are many ways to run Odoo, it’s important to know how to deploy it manually, because if you have a problem with docker, you will really need to know the basics.
 
 If you don't know it very well, check the Odoo doc:
 
@@ -124,7 +122,7 @@ Akretion - AK
 
 The toolbelt for odoo: https://github.com/akretion/ak
 
-Do a lot of thinks but, in this training we will gonna use it for only two:
+It does a lot of things, but in this training we will use it for only two:
 
 1. Download the addons
 2. Generate addons path
@@ -150,7 +148,7 @@ Setup Odoo Environment
 ----------------------
 
 We will start from a pre-configured repository. To know more about it you must study a
-little a about the camp2camp docker-odoo-project, docker itself and other used components
+little about the camptocamp docker-odoo-project, docker itself and other used components
 like postgresql and traefik.
 
 .. code-block:: shell
@@ -214,7 +212,7 @@ Running Odoo
 Adding OCA projects / modules
 -----------------------------
 
-Now that we have the Odoo up and running let's add a new project to improve it.
+Now that we have the Odoo up and running, let’s add a new project to improve it.
 
 1. Go to https://odoo-community.org/shop and search for **Responsive**;
 2. Open the module **web_responsive**, from Tecnativa and LasLabs, go to the website(https://github.com/OCA/web)
@@ -292,7 +290,7 @@ Edit your docker compose to update the ADDONS_PATH
 
 .. nextslide::
 
-Lets auto install web_responsive with a migration script, edit you PROJECT_ROOT/odoo/migration.yml
+To auto install web_responsive with a migration script, edit you PROJECT_ROOT/odoo/migration.yml
 
 .. code-block:: shell
     :emphasize-lines: 12-16
@@ -478,7 +476,7 @@ Before install it we need to fix some settings:
 To create a main menu we need a icon, for that we will use a standard item, download from Odoo webiste:
 https://www.odoo.com/pt_BR/page/brand-assets
 
-Create a folder struct inside the module and save it: **odoo/local-src/customer_service/static/description/icon.png**
+Create the following folder structure inside the module and save it: **odoo/local-src/customer_service/static/description/icon.png**
 
 Inside de folder views, create a new file: **customer_service/views/customer_service_menu.xml**
 
@@ -561,7 +559,7 @@ changing all the permissions to **ONE**
 Updating your Odoo module manually
 ##################################
 
-If yout docker-composed is already running stop it. And run it with the folllowing parameters:
+If your docker-composed is already running, stop it. Run it with the folllowing parameters:
 
 .. code-block:: shell
 
@@ -601,7 +599,7 @@ that are five blocks of code:
 1. Form view;
 2. Search / Filter View (Add Filter, Group and Favorites search);
 3. Tree / List view;
-4. Action (Speaking in a very simple way links the menu with the views);
+4. Action (Speaking in a very simple way, links the menu with the views);
 5. Menu;
 
 .. nextslide::
@@ -921,14 +919,13 @@ We will create and send a pull request at OCA project: https://github.com/OCA/co
 
 But to To do that, we need to ensure a feel things:
 
-0. Ensure that
 1. A fork of this project.
 2. Add our fork to spec.yml
 3. Start coding
 4. Make a pull request
 
-Adding a Forking a project
-##########################
+Adding a Fork to our project
+############################
 
 Go to the project, find the fork button on the upper right side of the screen.
 Fork it to your user/organization, and add your remote fork url to spec.yml

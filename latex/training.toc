@@ -27,7 +27,7 @@
 \contentsline {section}{\numberline {6.4}Add Email features}{21}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Sending SMS}{22}{section.6.5}%
 \contentsline {section}{\numberline {6.6}Creating a module to be sent to OCA}{23}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Adding a Forking a project}{23}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.1}Adding a Fork to our project}{23}{subsection.6.6.1}%
 \contentsline {subsection}{\numberline {6.6.2}Easy creating a OCA module with bobtemplates.odoo}{24}{subsection.6.6.2}%
 \contentsline {subsection}{\numberline {6.6.3}Extending Odoo models}{24}{subsection.6.6.3}%
 \contentsline {subsection}{\numberline {6.6.4}Extending Odoo models: iap.account}{24}{subsection.6.6.4}%

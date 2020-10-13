@@ -124,7 +124,7 @@
 <li><a class="reference internal" href="#add-email-features">Add Email features</a></li>
 <li><a class="reference internal" href="#sending-sms">Sending SMS</a></li>
 <li><a class="reference internal" href="#creating-a-module-to-be-sent-to-oca">Creating a module to be sent to OCA</a><ul>
-<li><a class="reference internal" href="#adding-a-forking-a-project">Adding a Forking a project</a></li>
+<li><a class="reference internal" href="#adding-a-fork-to-our-project">Adding a Fork to our project</a></li>
 <li><a class="reference internal" href="#easy-creating-a-oca-module-with-bobtemplates-odoo">Easy creating a OCA module with bobtemplates.odoo</a></li>
 <li><a class="reference internal" href="#extending-odoo-models">Extending Odoo models</a></li>
 <li><a class="reference internal" href="#extending-odoo-models-iap-account">Extending Odoo models: iap.account</a></li>
@@ -191,7 +191,7 @@
 <p>From Basis to First Module</p>
 <div class="section" id="oca-days-2020">
 <h2>OCA Days - 2020<a class="headerlink" href="#oca-days-2020" title="Permalink to this headline">¶</a></h2>
-<a class="reference internal image-reference" href="_images/oca-days-logo.png"><img alt="_images/oca-days-logo.png" class="align-center" src="_images/oca-days-logo.png" style="width: 500px; height: 550px;" /></a>
+<img alt="_images/oca-days-logo.png" class="align-center" src="_images/oca-days-logo.png" />
 </div>
 <div class="section" id="luis-felipe-mileo">
 <h2>Luis Felipe Miléo<a class="headerlink" href="#luis-felipe-mileo" title="Permalink to this headline">¶</a></h2>
@@ -210,7 +210,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
-<li>Fell free to contact me after the presentation at OCA discord channel. I will be very happy to clarify any remaining doubts.</li>
+<li>Fell free to contact me after the presentation at OCA discord channel. I will be glad to clarify any remaining doubts.</li>
 </ul>
 </div>
 </div>
@@ -282,7 +282,7 @@ of Odoo features.</p>
 <h1>Docker environment<a class="headerlink" href="#docker-environment" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>Docker environment<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>There are many ways to run Odoo, it&#8217;s important that you know how to deploy it manually too because if you have a problem with docker, you will really need to know the basics.</p>
+<p>Although there are many ways to run Odoo, it’s important to know how to deploy it manually, because if you have a problem with docker, you will really need to know the basics.</p>
 <p>If you don&#8217;t know it very well, check the Odoo doc:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">odoo</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">documentation</span><span class="o">/</span><span class="mf">14.0</span><span class="o">/</span><span class="n">setup</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">html</span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">odoo</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">documentation</span><span class="o">/</span><span class="mf">14.0</span><span class="o">/</span><span class="n">setup</span><span class="o">/</span><span class="n">deploy</span><span class="o">.</span><span class="n">html</span>
@@ -307,7 +307,7 @@ of Odoo features.</p>
 <div class="section" id="akretion-ak">
 <h3>Akretion - AK<a class="headerlink" href="#akretion-ak" title="Permalink to this headline">¶</a></h3>
 <p>The toolbelt for odoo: <a class="reference external" href="https://github.com/akretion/ak">https://github.com/akretion/ak</a></p>
-<p>Do a lot of thinks but, in this training we will gonna use it for only two:</p>
+<p>It does a lot of things, but in this training we will use it for only two:</p>
 <ol class="arabic simple">
 <li>Download the addons</li>
 <li>Generate addons path</li>
@@ -332,7 +332,7 @@ python3 -m pip install git+https://github.com/akretion/ak --user
 <div class="section" id="setup-odoo-environment">
 <h2>Setup Odoo Environment<a class="headerlink" href="#setup-odoo-environment" title="Permalink to this headline">¶</a></h2>
 <p>We will start from a pre-configured repository. To know more about it you must study a
-little a about the camp2camp docker-odoo-project, docker itself and other used components
+little about the camptocamp docker-odoo-project, docker itself and other used components
 like postgresql and traefik.</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>git clone https://github.com/kmee/oca-days-2020-odoo-developer.git --branch<span class="o">=</span>template
 <span class="nb">cd</span> oca-days-2020-odoo-developer-source
@@ -387,7 +387,7 @@ docker-compose up
 </div>
 <div class="section" id="adding-oca-projects-modules">
 <h2>Adding OCA projects / modules<a class="headerlink" href="#adding-oca-projects-modules" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have the Odoo up and running let&#8217;s add a new project to improve it.</p>
+<p>Now that we have the Odoo up and running, let’s add a new project to improve it.</p>
 <ol class="arabic simple">
 <li>Go to <a class="reference external" href="https://odoo-community.org/shop">https://odoo-community.org/shop</a> and search for <strong>Responsive</strong>;</li>
 <li>Open the module <strong>web_responsive</strong>, from Tecnativa and LasLabs, go to the website(<a class="reference external" href="https://github.com/OCA/web">https://github.com/OCA/web</a>)</li>
@@ -444,7 +444,7 @@ web:
       <span class="o">[</span>...<span class="o">]</span>
 </pre></div>
 </div>
-<p>Lets auto install web_responsive with a migration script, edit you PROJECT_ROOT/odoo/migration.yml</p>
+<p>To auto install web_responsive with a migration script, edit you PROJECT_ROOT/odoo/migration.yml</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>migration:
   options:
     install_command: odoo
@@ -588,7 +588,7 @@ brackets at the end of the questions show the default value <span class="k">if</
 </ol>
 <p>To create a main menu we need a icon, for that we will use a standard item, download from Odoo webiste:
 <a class="reference external" href="https://www.odoo.com/pt_BR/page/brand-assets">https://www.odoo.com/pt_BR/page/brand-assets</a></p>
-<p>Create a folder struct inside the module and save it: <strong>odoo/local-src/customer_service/static/description/icon.png</strong></p>
+<p>Create the following folder structure inside the module and save it: <strong>odoo/local-src/customer_service/static/description/icon.png</strong></p>
 <p>Inside de folder views, create a new file: <strong>customer_service/views/customer_service_menu.xml</strong></p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;odoo&gt;</span>
@@ -651,7 +651,7 @@ changing all the permissions to <strong>ONE</strong></p>
 </div>
 <div class="section" id="updating-your-odoo-module-manually">
 <h3>Updating your Odoo module manually<a class="headerlink" href="#updating-your-odoo-module-manually" title="Permalink to this headline">¶</a></h3>
-<p>If yout docker-composed is already running stop it. And run it with the folllowing parameters:</p>
+<p>If your docker-composed is already running, stop it. Run it with the folllowing parameters:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>docker-compose run --rm -e <span class="nv">DB_NAME</span><span class="o">=</span>dev-oca-days odoo odoo -u customer_service --stop-after-init
 <span class="c1"># This command will run Odoo, update the module customer_service,</span>
 <span class="c1"># installed on the database dev-oca-days and when finished will stop the Odoo.</span>
@@ -685,7 +685,7 @@ that are five blocks of code:</p>
 <li>Form view;</li>
 <li>Search / Filter View (Add Filter, Group and Favorites search);</li>
 <li>Tree / List view;</li>
-<li>Action (Speaking in a very simple way links the menu with the views);</li>
+<li>Action (Speaking in a very simple way, links the menu with the views);</li>
 <li>Menu;</li>
 </ol>
 <p>Add the all the new fields to the form view:</p>
@@ -947,15 +947,14 @@ send SMS with the provider of our choice.</p>
 <p>This time we will not create the module <strong>sms_nexmo</strong> at local-src folder.
 We will create and send a pull request at OCA project: <a class="reference external" href="https://github.com/OCA/connector-telephony">https://github.com/OCA/connector-telephony</a></p>
 <p>But to To do that, we need to ensure a feel things:</p>
-<ol class="arabic simple" start="0">
-<li>Ensure that</li>
+<ol class="arabic simple">
 <li>A fork of this project.</li>
 <li>Add our fork to spec.yml</li>
 <li>Start coding</li>
 <li>Make a pull request</li>
 </ol>
-<div class="section" id="adding-a-forking-a-project">
-<h3>Adding a Forking a project<a class="headerlink" href="#adding-a-forking-a-project" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="adding-a-fork-to-our-project">
+<h3>Adding a Fork to our project<a class="headerlink" href="#adding-a-fork-to-our-project" title="Permalink to this headline">¶</a></h3>
 <p>Go to the project, find the fork button on the upper right side of the screen.
 Fork it to your user/organization, and add your remote fork url to spec.yml</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">odoo</span><span class="p">:</span>

@@ -28,7 +28,7 @@
 
 
 \title{Odoo Developer Training: From Basis to First Module}
-\date{October 12, 2020}
+\date{October 13, 2020}
 \release{2020.10}
 \author{Luis Felipe Miléo}
 \newcommand{\sphinxlogo}{}
@@ -196,7 +196,7 @@ www.kmee.com.br
 
 \begin{notice}{note}{Note:}\begin{itemize}
 \item {} 
-Fell free to contact me after the presentation at OCA discord channel. I will be very happy to clarify any remaining doubts.
+Fell free to contact me after the presentation at OCA discord channel. I will be glad to clarify any remaining doubts.
 
 \end{itemize}
 \end{notice}
@@ -306,7 +306,7 @@ OCA contributors use Twitter a lot! Find who they are here: \url{https://github.
 
 \section{Docker environment}
 \label{index:id1}
-There are many ways to run Odoo, it's important that you know how to deploy it manually too because if you have a problem with docker, you will really need to know the basics.
+Although there are many ways to run Odoo, it’s important to know how to deploy it manually, because if you have a problem with docker, you will really need to know the basics.
 
 If you don't know it very well, check the Odoo doc:
 
@@ -345,7 +345,7 @@ Main components:
 \label{index:akretion-ak}
 The toolbelt for odoo: \url{https://github.com/akretion/ak}
 
-Do a lot of thinks but, in this training we will gonna use it for only two:
+It does a lot of things, but in this training we will use it for only two:
 \begin{enumerate}
 \item {} 
 Download the addons
@@ -386,7 +386,7 @@ Install Akretion AK
 \section{Setup Odoo Environment}
 \label{index:setup-odoo-environment}
 We will start from a pre-configured repository. To know more about it you must study a
-little a about the camp2camp docker-odoo-project, docker itself and other used components
+little about the camptocamp docker-odoo-project, docker itself and other used components
 like postgresql and traefik.
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -447,7 +447,7 @@ docker\PYGZhy{}compose up
 
 \section{Adding OCA projects / modules}
 \label{index:adding-oca-projects-modules}
-Now that we have the Odoo up and running let's add a new project to improve it.
+Now that we have the Odoo up and running, let’s add a new project to improve it.
 \begin{enumerate}
 \item {} 
 Go to \url{https://odoo-community.org/shop} and search for \textbf{Responsive};
@@ -521,7 +521,7 @@ services:
       \PYG{o}{[}...\PYG{o}{]}
 \end{Verbatim}
 
-Lets auto install web\_responsive with a migration script, edit you PROJECT\_ROOT/odoo/migration.yml
+To auto install web\_responsive with a migration script, edit you PROJECT\_ROOT/odoo/migration.yml
 
 \begin{Verbatim}[commandchars=\\\{\}]
 migration:
@@ -703,7 +703,7 @@ Ensure create / write / delete user access rules
 To create a main menu we need a icon, for that we will use a standard item, download from Odoo webiste:
 \url{https://www.odoo.com/pt\_BR/page/brand-assets}
 
-Create a folder struct inside the module and save it: \textbf{odoo/local-src/customer\_service/static/description/icon.png}
+Create the following folder structure inside the module and save it: \textbf{odoo/local-src/customer\_service/static/description/icon.png}
 
 Inside de folder views, create a new file: \textbf{customer\_service/views/customer\_service\_menu.xml}
 
@@ -776,7 +776,7 @@ changing all the permissions to \textbf{ONE}
 
 \subsection{Updating your Odoo module manually}
 \label{index:updating-your-odoo-module-manually}
-If yout docker-composed is already running stop it. And run it with the folllowing parameters:
+If your docker-composed is already running, stop it. Run it with the folllowing parameters:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 docker\PYGZhy{}compose run \PYGZhy{}\PYGZhy{}rm \PYGZhy{}e \PYG{n+nv}{DB\PYGZus{}NAME}\PYG{o}{=}dev\PYGZhy{}oca\PYGZhy{}days odoo odoo \PYGZhy{}u customer\PYGZus{}service \PYGZhy{}\PYGZhy{}stop\PYGZhy{}after\PYGZhy{}init
@@ -820,7 +820,7 @@ Search / Filter View (Add Filter, Group and Favorites search);
 Tree / List view;
 
 \item {} 
-Action (Speaking in a very simple way links the menu with the views);
+Action (Speaking in a very simple way, links the menu with the views);
 
 \item {} 
 Menu;
@@ -1130,10 +1130,6 @@ We will create and send a pull request at OCA project: \url{https://github.com/O
 
 But to To do that, we need to ensure a feel things:
 \begin{enumerate}
-\setcounter{enumi}{-1}
-\item {} 
-Ensure that
-
 \item {} 
 A fork of this project.
 
@@ -1149,8 +1145,8 @@ Make a pull request
 \end{enumerate}
 
 
-\subsection{Adding a Forking a project}
-\label{index:adding-a-forking-a-project}
+\subsection{Adding a Fork to our project}
+\label{index:adding-a-fork-to-our-project}
 Go to the project, find the fork button on the upper right side of the screen.
 Fork it to your user/organization, and add your remote fork url to spec.yml
 
