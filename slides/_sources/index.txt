@@ -187,7 +187,7 @@ Setup the project
 .. code-block:: shell
 
     # Inside de project go to Odoo folder
-    cd oca-days-2020-odoo-developer-docs
+    cd training
     cd odoo
     # Run **ak build** to download the sources
     ak build
