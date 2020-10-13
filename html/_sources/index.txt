@@ -397,8 +397,7 @@ The basics:
 - Each model is a Python class that subclasses odoo.models.Model.
 - Each model is generally maps to a single database table.
 - Each attribute of the model represents a database field.
-- With all of this, Django gives you an automatically-generated database-access API; see Making queries.
-
+- With all of this, Odoo gives you an automatically-generated database-access API; see Making queries.
 
 .. nextslide::
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.5)  13 OCT 2020 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.5)  13 OCT 2020 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -730,7 +730,7 @@ re/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/
 type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utm
 b8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on training.pdf (35 pages, 423523 bytes).
+Output written on training.pdf (35 pages, 423519 bytes).
 PDF statistics:
  439 PDF objects out of 1000 (max. 8388607)
  381 compressed objects within 4 object streams
