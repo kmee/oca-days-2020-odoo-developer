@@ -11,7 +11,7 @@ OCA Days - 2020
 Luis Felipe Miléo
 -----------------
 - Co-founder and CEO at KMEE;
-- Odoo Consultant and Developer since 2010;
+- Odoo Consultant and Developer since 2012;
 - `PSC, team leader, of Brazilian Localization: <https://odoo-community.org/psc-teams/brazil-66>`_
 - Delegate member of Odoo Community Association;
 - Computer Engineer;
