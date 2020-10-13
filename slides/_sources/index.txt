@@ -696,7 +696,7 @@ The first step is to add base_kanban_stage to our module dependencies list. To d
         'author': 'KMEE',
         'website': 'www.kmee.com.br',
         'depends': [
-            'base_kanban_stage_state',
+            'base_kanban_stage',
         ],
         'data': [
             'security/customer_service_ticket.xml',
