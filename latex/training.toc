@@ -35,5 +35,7 @@
 \contentsline {section}{\numberline {6.7}Integrate Customer Service with SMS}{27}{section.6.7}%
 \contentsline {subsection}{\numberline {6.7.1}Send customer service number by SMS}{27}{subsection.6.7.1}%
 \contentsline {subsection}{\numberline {6.7.2}Creating a button to send sms}{28}{subsection.6.7.2}%
+\contentsline {section}{\numberline {6.8}Seding your module to the OCA}{29}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Review}{29}{section.6.9}%
 \contentsline {chapter}{\numberline {7}Questions and answers}{31}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Thank you to the OCA Sponsors}{31}{section.7.1}%

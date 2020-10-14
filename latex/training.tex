@@ -1372,12 +1372,18 @@ Now we can use it on our python class:
         \PYG{k}{return} \PYG{n+nb}{super}\PYG{p}{(}\PYG{n}{SmsApi}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{p}{)}\PYG{o}{.}\PYG{n}{\PYGZus{}send\PYGZus{}sms\PYGZus{}batch}\PYG{p}{(}\PYG{n}{messages}\PYG{p}{)}
 
     \PYG{n}{sms} \PYG{o}{=} \PYG{n}{Sms}\PYG{p}{(}\PYG{n}{Client}\PYG{p}{(}\PYG{n}{key}\PYG{o}{=}\PYG{n}{account}\PYG{o}{.}\PYG{n}{key}\PYG{p}{,} \PYG{n}{secret}\PYG{o}{=}\PYG{n}{account}\PYG{o}{.}\PYG{n}{secret}\PYG{p}{)}\PYG{p}{)}
+
     \PYG{k}{for} \PYG{n}{record} \PYG{o+ow}{in} \PYG{n}{messages}\PYG{p}{:}
-        \PYG{n}{record}\PYG{o}{.}\PYG{n}{\PYGZus{}send\PYGZus{}sms\PYGZus{}nexmo}\PYG{p}{(}\PYG{n}{sms}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+        \PYG{n}{result} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}send\PYGZus{}sms\PYGZus{}nexmo}\PYG{p}{(}\PYG{n}{sms}\PYG{p}{,} \PYG{p}{\PYGZob{}}
             \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{from}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Odoo}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
             \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{to}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{record}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{number}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,}
             \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{text}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{record}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{content}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,}
         \PYG{p}{\PYGZcb{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{messages}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{status}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{0}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:}
+            \PYG{n}{record}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{state}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{success}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{record}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{state}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{error}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{k}{return} \PYG{n}{messages}
 \end{Verbatim}
 
 
@@ -1569,6 +1575,37 @@ Create the method at the model
                 \PYG{n}{partner\PYGZus{}ids}\PYG{o}{=}\PYG{n}{record}\PYG{o}{.}\PYG{n}{partner\PYGZus{}id}\PYG{o}{.}\PYG{n}{ids}
             \PYG{p}{)}
 \end{Verbatim}
+
+
+\section{Seding your module to the OCA}
+\label{index:seding-your-module-to-the-oca}\begin{enumerate}
+\item {} 
+Commit
+
+\item {} 
+Push to the fork
+
+\item {} 
+Create a pull request
+
+\end{enumerate}
+
+
+\section{Review}
+\label{index:review}\begin{enumerate}
+\item {} 
+Setup your project from a project template;
+
+\item {} 
+Use OCA modules;
+
+\item {} 
+Create your own module;
+
+\item {} 
+Create an OCA module;
+
+\end{enumerate}
 
 
 \chapter{Questions and answers}

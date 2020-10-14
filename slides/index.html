@@ -1763,12 +1763,18 @@ default value <span class="k">if</span> there is no answer.
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">SmsApi</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_send_sms_batch</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 
     <span class="n">sms</span> <span class="o">=</span> <span class="n">Sms</span><span class="p">(</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">account</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">account</span><span class="o">.</span><span class="n">secret</span><span class="p">))</span>
+
     <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
-        <span class="n">record</span><span class="o">.</span><span class="n">_send_sms_nexmo</span><span class="p">(</span><span class="n">sms</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_sms_nexmo</span><span class="p">(</span><span class="n">sms</span><span class="p">,</span> <span class="p">{</span>
             <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;Odoo&#39;</span><span class="p">,</span>
             <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">],</span>
             <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">],</span>
         <span class="p">})</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;messages&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;success&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span>
+    <span class="k">return</span> <span class="n">messages</span>
 </pre></div>
 </div>
 
@@ -2047,6 +2053,43 @@ default value <span class="k">if</span> there is no answer.
 <div class="slide-footer">Slides + Html + PDF + Code: https://kmee.github.io/oca-days-2020-odoo-developer</div>
 
 </article>
+<article class="slide level-2" id="seding-your-module-to-the-oca">
+
+<h2>Seding your module to the OCA</h2>
+
+<ol class="arabic simple">
+<li>Commit</li>
+<li>Push to the fork</li>
+<li>Create a pull request</li>
+</ol>
+
+
+
+<div class="slide-no">76</div>
+
+
+<div class="slide-footer">Slides + Html + PDF + Code: https://kmee.github.io/oca-days-2020-odoo-developer</div>
+
+</article>
+<article class="slide level-2" id="review">
+
+<h2>Review</h2>
+
+<ol class="arabic simple">
+<li>Setup your project from a project template;</li>
+<li>Use OCA modules;</li>
+<li>Create your own module;</li>
+<li>Create an OCA module;</li>
+</ol>
+
+
+
+<div class="slide-no">77</div>
+
+
+<div class="slide-footer">Slides + Html + PDF + Code: https://kmee.github.io/oca-days-2020-odoo-developer</div>
+
+</article>
 <article class="slide level-1" id="questions-and-answers">
 
 <h1>Questions and answers</h1>
@@ -2054,7 +2097,7 @@ default value <span class="k">if</span> there is no answer.
 
 
 
-<div class="slide-no">76</div>
+<div class="slide-no">78</div>
 
 
 <div class="slide-footer">Slides + Html + PDF + Code: https://kmee.github.io/oca-days-2020-odoo-developer</div>
@@ -2068,7 +2111,7 @@ default value <span class="k">if</span> there is no answer.
 
 
 
-<div class="slide-no">77</div>
+<div class="slide-no">79</div>
 
 
 <div class="slide-footer">Slides + Html + PDF + Code: https://kmee.github.io/oca-days-2020-odoo-developer</div>

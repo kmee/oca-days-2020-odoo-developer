@@ -136,6 +136,8 @@
 <li><a class="reference internal" href="#creating-a-button-to-send-sms">Creating a button to send sms</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#seding-your-module-to-the-oca">Seding your module to the OCA</a></li>
+<li><a class="reference internal" href="#review">Review</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#questions-and-answers">Questions and answers</a><ul>
@@ -1150,12 +1152,18 @@ default value <span class="k">if</span> there is no answer.
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">SmsApi</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_send_sms_batch</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 
     <span class="n">sms</span> <span class="o">=</span> <span class="n">Sms</span><span class="p">(</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">account</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">account</span><span class="o">.</span><span class="n">secret</span><span class="p">))</span>
+
     <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
-        <span class="n">record</span><span class="o">.</span><span class="n">_send_sms_nexmo</span><span class="p">(</span><span class="n">sms</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_sms_nexmo</span><span class="p">(</span><span class="n">sms</span><span class="p">,</span> <span class="p">{</span>
             <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;Odoo&#39;</span><span class="p">,</span>
             <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">],</span>
             <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">],</span>
         <span class="p">})</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;messages&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;success&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span>
+    <span class="k">return</span> <span class="n">messages</span>
 </pre></div>
 </div>
 </div>
@@ -1318,6 +1326,23 @@ default value <span class="k">if</span> there is no answer.
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="seding-your-module-to-the-oca">
+<h2>Seding your module to the OCA<a class="headerlink" href="#seding-your-module-to-the-oca" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Commit</li>
+<li>Push to the fork</li>
+<li>Create a pull request</li>
+</ol>
+</div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Setup your project from a project template;</li>
+<li>Use OCA modules;</li>
+<li>Create your own module;</li>
+<li>Create an OCA module;</li>
+</ol>
 </div>
 </div>
 <div class="section" id="questions-and-answers">

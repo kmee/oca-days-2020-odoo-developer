@@ -1150,19 +1150,25 @@ Now we can use it on our python class:
 
 .. code-block:: python
 
-        @api.model
-        def _send_sms_batch(self, messages):
-            account = self.env['iap.account'].get('nexmo.sms')
-            if not account:
-                return super(SmsApi, self)._send_sms_batch(messages)
+    @api.model
+    def _send_sms_batch(self, messages):
+        account = self.env['iap.account'].get('nexmo.sms')
+        if not account:
+            return super(SmsApi, self)._send_sms_batch(messages)
 
-            sms = Sms(Client(key=account.key, secret=account.secret))
-            for record in messages:
-                record._send_sms_nexmo(sms, {
-                    'from': 'Odoo',
-                    'to': record['number'],
-                    'text': record['content'],
-                })
+        sms = Sms(Client(key=account.key, secret=account.secret))
+
+        for record in messages:
+            result = self._send_sms_nexmo(sms, {
+                'from': 'Odoo',
+                'to': record['number'],
+                'text': record['content'],
+            })
+            if result['messages'][0]['status'] == '0':
+                record['state'] = 'success'
+            else:
+                record['state'] = 'error'
+        return messages
 
 
 Integrate Customer Service with SMS
@@ -1355,6 +1361,24 @@ Creating a button to send sms
                     'OCA days: Your ticket number is {}'.format(record.code),
                     partner_ids=record.partner_id.ids
                 )
+
+
+
+Seding your module to the OCA
+-----------------------------
+
+1. Commit
+2. Push to the fork
+3. Create a pull request
+
+
+Review
+------
+
+1. Setup your project from a project template;
+2. Use OCA modules;
+3. Create your own module;
+4. Create an OCA module;
 
 
 Questions and answers
