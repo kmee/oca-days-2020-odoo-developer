@@ -17,6 +17,8 @@
         'security/customer_service_ticket.xml',
 
         'views/customer_service_menu.xml',
+        'data/ir_sequence_data.xml',
+
         'views/customer_service_ticket.xml',
     ],
     'demo': [

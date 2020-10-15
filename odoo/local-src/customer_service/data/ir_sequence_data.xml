@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="customer_service_sequence" model="ir.sequence">
+            <field name="name">CustomerService</field>
+            <field name="code">customer.service</field>
+            <field name="prefix">CS/</field>
+            <field name="padding">7</field>
+        </record>
+
+    </data>
+</odoo>

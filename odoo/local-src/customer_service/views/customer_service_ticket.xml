@@ -14,6 +14,7 @@
                 </header>
                 <sheet>
                     <group>
+                        <field name="code"/>
                         <field name="name"/>
                         <field name="description"/>
                         <field name="user_id"/>
@@ -44,6 +45,7 @@
         <field name="model">customer.service.ticket</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="code"/>
                 <field name="name"/>
                 <field name="user_id"/>
                 <field name="partner_id"/>
