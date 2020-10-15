@@ -12,6 +12,7 @@
     'depends': [
         'base_kanban_stage',
         'mail',
+        'sms', # Odoo Sa
     ],
     'data': [
         'security/customer_service_ticket.xml',

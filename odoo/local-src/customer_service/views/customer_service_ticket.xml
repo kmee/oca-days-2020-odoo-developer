@@ -10,7 +10,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="stage_id" widget="statusbar"/>
+                    <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                    <button name="send_number_by_sms" type="object" string="Send Object by SMS"/>
                 </header>
                 <sheet>
                     <group>

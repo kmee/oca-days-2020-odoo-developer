@@ -20,3 +20,10 @@ class CustomerServiceTicket(models.Model):
     user_id = fields.Many2one('res.users')
     partner_id = fields.Many2one('res.partner')
     partner_email = fields.Char(related='partner_id.email')
+
+    def send_number_by_sms(self):
+        for record in self:
+            record._message_sms(
+                'OCA days: Your ticket number is {}'.format(record.code),
+                partner_ids=record.partner_id.ids
+            )

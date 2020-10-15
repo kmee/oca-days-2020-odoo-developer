@@ -24,3 +24,16 @@ migration:
       addons:
         upgrade:
           - customer_service
+    - version: 13.0.0.0.3
+      addons:
+        upgrade:
+          - base_kanban_stage
+          - customer_service
+    - version: 13.0.0.0.4
+      addons:
+        upgrade:
+          - sms_nexmo
+    - version: 13.0.0.0.5
+      addons:
+        upgrade:
+          - customer_service

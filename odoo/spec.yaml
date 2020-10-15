@@ -9,3 +9,7 @@ web:
 kmee-server-tools:
     modules: ['base_kanban_stage']
     src: https://github.com/kmee/server-tools 13.0-mig-base_kanban_stage
+
+connector-telephony:
+    modules: []
+    src: https://github.com/OCA/connector-telephony 13.0
