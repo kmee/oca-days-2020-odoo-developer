@@ -28,7 +28,7 @@
 
 
 \title{Odoo Developer Training: From Basis to First Module}
-\date{October 13, 2020}
+\date{October 14, 2020}
 \release{2020.10}
 \author{Luis Felipe Miléo}
 \newcommand{\sphinxlogo}{}
@@ -465,6 +465,10 @@ Edit spec.yml
 
 \end{enumerate}
 
+\begin{notice}{note}{Note:}
+You can use Odoo SA shop to search modules too, but take a special attention in the author of the module.
+\end{notice}
+
 Editing spec.yml:
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -611,6 +615,19 @@ Run Odoo an check that our module ir already installed.
 
 TIP: When you are starting developing, the best way to go further is with little baby steps.
 
+\begin{notice}{note}{Note:}\begin{description}
+\item[{To learn more:}] \leavevmode\begin{itemize}
+\item {} 
+You can see a complete Odoo manifest here: \url{https://github.com/OCA/maintainer-tools/blob/master/template/module/\_\_manifest\_\_.py}
+
+\item {} 
+The official documentation: \url{https://www.odoo.com/documentation/14.0/reference/module.html}
+
+\end{itemize}
+
+\end{description}
+\end{notice}
+
 
 \subsection{Adding a new Business Model to our module}
 \label{index:adding-a-new-business-model-to-our-module}
@@ -632,6 +649,28 @@ Each attribute of the model represents a database field.
 With all of this, Odoo gives you an automatically-generated database-access API; see Making queries.
 
 \end{itemize}
+
+\begin{notice}{note}{Note:}\begin{description}
+\item[{To learn more:}] \leavevmode\begin{itemize}
+\item {} 
+Check the Odoo documentation: \url{https://www.odoo.com/documentation/14.0/reference/orm.html}
+
+\item {} \begin{description}
+\item[{Please read the Odoo code:}] \leavevmode\begin{itemize}
+\item {} 
+odoo/src/odoo/models.py
+
+\item {} 
+odoo/src/odoo/fields.py
+
+\end{itemize}
+
+\end{description}
+
+\end{itemize}
+
+\end{description}
+\end{notice}
 
 For example a CRM LEAD of Odoo Core crm module:
 
@@ -690,6 +729,16 @@ You will have the following file structure:
 \PYG{p}{\textbar{}}-- README.md
 \end{Verbatim}
 
+\begin{notice}{note}{Note:}\begin{description}
+\item[{To learn more:}] \leavevmode\begin{itemize}
+\item {} 
+You can see here a complete Odoo module: \url{https://github.com/OCA/maintainer-tools/blob/master/template/module/}
+
+\end{itemize}
+
+\end{description}
+\end{notice}
+
 Before install it we need to fix some settings:
 \begin{enumerate}
 \item {} 
@@ -720,6 +769,16 @@ Inside de folder views, create a new file: \textbf{customer\_service/views/custo
     \PYG{n+nt}{\PYGZlt{}/record\PYGZgt{}}
 \PYG{n+nt}{\PYGZlt{}/odoo\PYGZgt{}}
 \end{Verbatim}
+
+\begin{notice}{note}{Note:}\begin{description}
+\item[{To learn more:}] \leavevmode\begin{itemize}
+\item {} 
+Read more about the views at the official documentation: \url{https://www.odoo.com/documentation/14.0/reference/views.html}
+
+\end{itemize}
+
+\end{description}
+\end{notice}
 
 Edit the module manifest to import the main menu:
 
@@ -756,6 +815,16 @@ Let's relate the service ticket menu with our new main menu, open the file: \tex
 \PYG{n+nt}{\PYGZlt{}/record\PYGZgt{}}
 \end{Verbatim}
 
+\begin{notice}{note}{Note:}\begin{description}
+\item[{To learn more:}] \leavevmode\begin{itemize}
+\item {} 
+You can see here a complete Odoo module: \url{https://github.com/OCA/maintainer-tools/blob/master/template/module/}
+
+\end{itemize}
+
+\end{description}
+\end{notice}
+
 Edit
 \textbf{odoo/local-src/customer\_service/security/customer\_service\_ticket.xml}
 changing all the permissions to \textbf{ONE}
@@ -789,6 +858,10 @@ docker\PYGZhy{}compose run \PYGZhy{}\PYGZhy{}rm \PYGZhy{}e \PYG{n+nv}{DB\PYGZus{
 docker\PYGZhy{}compose up
 \end{Verbatim}
 
+\begin{notice}{note}{Note:}
+The Odoo command line interface: \url{https://www.odoo.com/documentation/14.0/reference/cmdline.html}
+\end{notice}
+
 
 \section{Adding fields to our model}
 \label{index:adding-fields-to-our-model}
@@ -809,6 +882,16 @@ But we need more, let's edit \emph{odoo/local-src/customer\_service/models/custo
     \PYG{n}{partner\PYGZus{}id} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Many2one}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{res.partner}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
     \PYG{n}{partner\PYGZus{}email} \PYG{o}{=} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{Char}\PYG{p}{(}\PYG{n}{related}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{partner\PYGZus{}id.email}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
 \end{Verbatim}
+
+\begin{notice}{note}{Note:}\begin{itemize}
+\item {} 
+Check more about the Odoo fields: \url{https://www.odoo.com/documentation/14.0/reference/orm.html\#fields}
+
+\item {} 
+odoo/src/odoo/fields.py \textless{}------- There is nothing better than reading the source code!!!!
+
+\end{itemize}
+\end{notice}
 
 We need to add this new fields to the view, check your \textbf{odoo/local-src/customer\_service/views/customer\_service\_ticket.xml}, you will see
 that are five blocks of code:
@@ -938,6 +1021,16 @@ the customer.service.ticket:
 
 By doing that we add all the functionalists of the model `base.kanban.abstract' in our model.
 
+\begin{notice}{note}{Note:}\begin{description}
+\item[{To learn more:}] \leavevmode\begin{itemize}
+\item {} 
+Odoo provides two inheritance mechanisms to extend an existing model in a modular way. \url{https://www.odoo.com/documentation/14.0/howtos/backend.html?highlight=inherit\#inheritance}
+
+\end{itemize}
+
+\end{description}
+\end{notice}
+
 Add a new view record at \textbf{customer\_service\_ticket.xml} and the \textbf{kanban} to the view\_mode
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1001,6 +1094,16 @@ Add \textbf{mail.thread} to the inherit list of your model, same as we did with 
 Improve the view to display the email fields;
 
 \end{enumerate}
+
+\begin{notice}{note}{Note:}\begin{description}
+\item[{To learn more:}] \leavevmode\begin{itemize}
+\item {} 
+Odoo implements some useful classes and mixins that make it easy for you to add often-used behaviours on your objects. This guide will details most of them, with examples and use cases. \url{https://www.odoo.com/documentation/14.0/reference/mixins.html?highlight=inherit}
+
+\end{itemize}
+
+\end{description}
+\end{notice}
 \begin{enumerate}
 \item {} 
 Add dependence:
@@ -1291,6 +1394,9 @@ Only with the external id in hand can we edit the inherited view.
 \begin{notice}{note}{Note:}\begin{itemize}
 \item {} 
 TIP: Always remember to use the complete name: \textless{}MODULE\textgreater{}\textless{}DOT\textgreater{}\textless{}RECORD\_ID\textgreater{}
+
+\item {} 
+Check the documentation about the view inheritance: \url{https://www.odoo.com/documentation/14.0/reference/views.html?highlight=inherit\#inheritance}
 
 \end{itemize}
 \end{notice}
@@ -1589,6 +1695,16 @@ Push to the fork
 Create a pull request
 
 \end{enumerate}
+
+\begin{notice}{note}{Note:}\begin{description}
+\item[{To learn more:}] \leavevmode\begin{itemize}
+\item {} 
+Check the OCA guidelines: \url{https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst}
+
+\end{itemize}
+
+\end{description}
+\end{notice}
 
 
 \section{Review}

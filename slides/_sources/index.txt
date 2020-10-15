@@ -221,6 +221,10 @@ Now that we have the Odoo up and running, let’s add a new project to improve i
 3. Copy the link.
 4. Edit spec.yml
 
+.. note::
+
+    You can use Odoo SA shop to search modules too, but take a special attention in the author of the module.
+
 .. nextslide::
 
 Editing spec.yml:
@@ -386,6 +390,12 @@ Run Odoo an check that our module ir already installed.
 
 TIP: When you are starting developing, the best way to go further is with little baby steps.
 
+.. note::
+
+    To learn more:
+        * You can see a complete Odoo manifest here: https://github.com/OCA/maintainer-tools/blob/master/template/module/__manifest__.py
+        * The official documentation: https://www.odoo.com/documentation/14.0/reference/module.html
+
 Adding a new Business Model to our module
 #########################################
 
@@ -398,6 +408,14 @@ The basics:
 - Each model is generally maps to a single database table.
 - Each attribute of the model represents a database field.
 - With all of this, Odoo gives you an automatically-generated database-access API; see Making queries.
+
+.. note::
+
+    To learn more:
+        * Check the Odoo documentation: https://www.odoo.com/documentation/14.0/reference/orm.html
+        * Please read the Odoo code:
+            - odoo/src/odoo/models.py
+            - odoo/src/odoo/fields.py
 
 .. nextslide::
 
@@ -464,6 +482,11 @@ You will have the following file structure:
     │       |── customer_service_ticket.xml # Our views: tree, form, search, kanban.
     |── README.md
 
+.. note::
+
+    To learn more:
+        * You can see here a complete Odoo module: https://github.com/OCA/maintainer-tools/blob/master/template/module/
+
 .. nextslide::
 
 Before install it we need to fix some settings:
@@ -491,6 +514,11 @@ Inside de folder views, create a new file: **customer_service/views/customer_ser
             <field name="web_icon">customer_service,static/description/icon.png</field>
         </record>
     </odoo>
+
+.. note::
+
+    To learn more:
+        * Read more about the views at the official documentation: https://www.odoo.com/documentation/14.0/reference/views.html
 
 .. nextslide::
 
@@ -534,6 +562,11 @@ Let's relate the service ticket menu with our new main menu, open the file: **od
         <field name="sequence" eval="16"/>
     </record>
 
+.. note::
+
+    To learn more:
+        * You can see here a complete Odoo module: https://github.com/OCA/maintainer-tools/blob/master/template/module/
+
 .. nextslide::
 
 Edit
@@ -570,6 +603,11 @@ If your docker-composed is already running, stop it. Run it with the folllowing 
      # Start Odoo again as normally
      docker-compose up
 
+
+.. note::
+
+    The Odoo command line interface: https://www.odoo.com/documentation/14.0/reference/cmdline.html
+
 Adding fields to our model
 --------------------------
 
@@ -591,6 +629,11 @@ But we need more, let's edit *odoo/local-src/customer_service/models/customer_se
         user_id = fields.Many2one('res.users')
         partner_id = fields.Many2one('res.partner')
         partner_email = fields.Char(related='partner_id.email')
+
+.. note::
+
+    * Check more about the Odoo fields: https://www.odoo.com/documentation/14.0/reference/orm.html#fields
+    * odoo/src/odoo/fields.py <------- There is nothing better than reading the source code!!!!
 
 .. nextslide::
 
@@ -721,6 +764,11 @@ Inherit from ``base.kanban.abstract`` to add Kanban stage functionality to
 
 By doing that we add all the functionalists of the model 'base.kanban.abstract' in our model.
 
+.. note::
+
+    To learn more:
+        * Odoo provides two inheritance mechanisms to extend an existing model in a modular way. https://www.odoo.com/documentation/14.0/howtos/backend.html?highlight=inherit#inheritance
+
 .. nextslide::
 
 Add a new view record at **customer_service_ticket.xml** and the **kanban** to the view_mode
@@ -786,6 +834,11 @@ To add email features to our model, first we need to:
 1. Add mail module to our module dependencies;
 2. Add **mail.thread** to the inherit list of your model, same as we did with **base.kanban.abstract**
 3. Improve the view to display the email fields;
+
+.. note::
+
+    To learn more:
+        * Odoo implements some useful classes and mixins that make it easy for you to add often-used behaviours on your objects. This guide will details most of them, with examples and use cases. https://www.odoo.com/documentation/14.0/reference/mixins.html?highlight=inherit
 
 .. nextslide::
 
@@ -1072,6 +1125,7 @@ Only with the external id in hand can we edit the inherited view.
 .. note::
 
     * TIP: Always remember to use the complete name: <MODULE><DOT><RECORD_ID>
+    * Check the documentation about the view inheritance: https://www.odoo.com/documentation/14.0/reference/views.html?highlight=inherit#inheritance
 
 Overwriting Odoo model: sms.api
 ###############################
@@ -1371,6 +1425,10 @@ Seding your module to the OCA
 2. Push to the fork
 3. Create a pull request
 
+.. note::
+
+    To learn more:
+        * Check the OCA guidelines: https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst
 
 Review
 ------

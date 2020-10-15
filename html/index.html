@@ -397,6 +397,10 @@ docker-compose up
 <li>Copy the link.</li>
 <li>Edit spec.yml</li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can use Odoo SA shop to search modules too, but take a special attention in the author of the module.</p>
+</div>
 <p>Editing spec.yml:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>odoo:
     modules: <span class="o">[]</span>
@@ -521,6 +525,17 @@ Generated file structure at PROJECT_ROOT/odoo/local-src
 </div>
 <p>Run Odoo an check that our module ir already installed.</p>
 <p>TIP: When you are starting developing, the best way to go further is with little baby steps.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>To learn more:</dt>
+<dd><ul class="first last simple">
+<li>You can see a complete Odoo manifest here: <a class="reference external" href="https://github.com/OCA/maintainer-tools/blob/master/template/module/__manifest__.py">https://github.com/OCA/maintainer-tools/blob/master/template/module/__manifest__.py</a></li>
+<li>The official documentation: <a class="reference external" href="https://www.odoo.com/documentation/14.0/reference/module.html">https://www.odoo.com/documentation/14.0/reference/module.html</a></li>
+</ul>
+</dd>
+</dl>
+</div>
 </div>
 <div class="section" id="adding-a-new-business-model-to-our-module">
 <h3>Adding a new Business Model to our module<a class="headerlink" href="#adding-a-new-business-model-to-our-module" title="Permalink to this headline">¶</a></h3>
@@ -533,6 +548,25 @@ behaviors of the data you’re storing.</p>
 <li>Each attribute of the model represents a database field.</li>
 <li>With all of this, Odoo gives you an automatically-generated database-access API; see Making queries.</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>To learn more:</dt>
+<dd><ul class="first last simple">
+<li>Check the Odoo documentation: <a class="reference external" href="https://www.odoo.com/documentation/14.0/reference/orm.html">https://www.odoo.com/documentation/14.0/reference/orm.html</a></li>
+<li><dl class="first docutils">
+<dt>Please read the Odoo code:</dt>
+<dd><ul class="first last">
+<li>odoo/src/odoo/models.py</li>
+<li>odoo/src/odoo/fields.py</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
 <p>For example a CRM LEAD of Odoo Core crm module:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Lead</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;crm.lead&quot;</span>
@@ -584,6 +618,16 @@ brackets at the end of the questions show the default value <span class="k">if</
 <span class="p">|</span>── README.md
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>To learn more:</dt>
+<dd><ul class="first last simple">
+<li>You can see here a complete Odoo module: <a class="reference external" href="https://github.com/OCA/maintainer-tools/blob/master/template/module/">https://github.com/OCA/maintainer-tools/blob/master/template/module/</a></li>
+</ul>
+</dd>
+</dl>
+</div>
 <p>Before install it we need to fix some settings:</p>
 <ol class="arabic simple">
 <li>Create a main menu</li>
@@ -603,6 +647,16 @@ brackets at the end of the questions show the default value <span class="k">if</
     <span class="nt">&lt;/record&gt;</span>
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>To learn more:</dt>
+<dd><ul class="first last simple">
+<li>Read more about the views at the official documentation: <a class="reference external" href="https://www.odoo.com/documentation/14.0/reference/views.html">https://www.odoo.com/documentation/14.0/reference/views.html</a></li>
+</ul>
+</dd>
+</dl>
 </div>
 <p>Edit the module manifest to import the main menu:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -634,6 +688,16 @@ brackets at the end of the questions show the default value <span class="k">if</
 <span class="nt">&lt;/record&gt;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>To learn more:</dt>
+<dd><ul class="first last simple">
+<li>You can see here a complete Odoo module: <a class="reference external" href="https://github.com/OCA/maintainer-tools/blob/master/template/module/">https://github.com/OCA/maintainer-tools/blob/master/template/module/</a></li>
+</ul>
+</dd>
+</dl>
+</div>
 <p>Edit
 <strong>odoo/local-src/customer_service/security/customer_service_ticket.xml</strong>
 changing all the permissions to <strong>ONE</strong></p>
@@ -663,6 +727,10 @@ changing all the permissions to <strong>ONE</strong></p>
 docker-compose up
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Odoo command line interface: <a class="reference external" href="https://www.odoo.com/documentation/14.0/reference/cmdline.html">https://www.odoo.com/documentation/14.0/reference/cmdline.html</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="adding-fields-to-our-model">
@@ -682,6 +750,13 @@ But we need more, let&#8217;s edit <em>odoo/local-src/customer_service/models/cu
 </span><span class="hll">    <span class="n">partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s1">&#39;res.partner&#39;</span><span class="p">)</span>
 </span><span class="hll">    <span class="n">partner_email</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">related</span><span class="o">=</span><span class="s1">&#39;partner_id.email&#39;</span><span class="p">)</span>
 </span></pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Check more about the Odoo fields: <a class="reference external" href="https://www.odoo.com/documentation/14.0/reference/orm.html#fields">https://www.odoo.com/documentation/14.0/reference/orm.html#fields</a></li>
+<li>odoo/src/odoo/fields.py &lt;&#8212;&#8212;- There is nothing better than reading the source code!!!!</li>
+</ul>
 </div>
 <p>We need to add this new fields to the view, check your <strong>odoo/local-src/customer_service/views/customer_service_ticket.xml</strong>, you will see
 that are five blocks of code:</p>
@@ -785,6 +860,16 @@ This is a good way to review other contributors work. Just be careful if you wil
 </span></pre></div>
 </div>
 <p>By doing that we add all the functionalists of the model &#8216;base.kanban.abstract&#8217; in our model.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>To learn more:</dt>
+<dd><ul class="first last simple">
+<li>Odoo provides two inheritance mechanisms to extend an existing model in a modular way. <a class="reference external" href="https://www.odoo.com/documentation/14.0/howtos/backend.html?highlight=inherit#inheritance">https://www.odoo.com/documentation/14.0/howtos/backend.html?highlight=inherit#inheritance</a></li>
+</ul>
+</dd>
+</dl>
+</div>
 <p>Add a new view record at <strong>customer_service_ticket.xml</strong> and the <strong>kanban</strong> to the view_mode</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="hll"><span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">&quot;customer_service_ticket_kanban_view&quot;</span> <span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span><span class="nt">&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>customer.service.ticket.kanban (in customer_service)<span class="nt">&lt;/field&gt;</span>
@@ -839,6 +924,16 @@ This is a good way to review other contributors work. Just be careful if you wil
 <li>Add <strong>mail.thread</strong> to the inherit list of your model, same as we did with <strong>base.kanban.abstract</strong></li>
 <li>Improve the view to display the email fields;</li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>To learn more:</dt>
+<dd><ul class="first last simple">
+<li>Odoo implements some useful classes and mixins that make it easy for you to add often-used behaviours on your objects. This guide will details most of them, with examples and use cases. <a class="reference external" href="https://www.odoo.com/documentation/14.0/reference/mixins.html?highlight=inherit">https://www.odoo.com/documentation/14.0/reference/mixins.html?highlight=inherit</a></li>
+</ul>
+</dd>
+</dl>
+</div>
 <ol class="arabic simple">
 <li>Add dependence:</li>
 </ol>
@@ -1083,6 +1178,7 @@ default value <span class="k">if</span> there is no answer.
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
 <li>TIP: Always remember to use the complete name: &lt;MODULE&gt;&lt;DOT&gt;&lt;RECORD_ID&gt;</li>
+<li>Check the documentation about the view inheritance: <a class="reference external" href="https://www.odoo.com/documentation/14.0/reference/views.html?highlight=inherit#inheritance">https://www.odoo.com/documentation/14.0/reference/views.html?highlight=inherit#inheritance</a></li>
 </ul>
 </div>
 </div>
@@ -1334,6 +1430,16 @@ default value <span class="k">if</span> there is no answer.
 <li>Push to the fork</li>
 <li>Create a pull request</li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>To learn more:</dt>
+<dd><ul class="first last simple">
+<li>Check the OCA guidelines: <a class="reference external" href="https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst">https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst</a></li>
+</ul>
+</dd>
+</dl>
+</div>
 </div>
 <div class="section" id="review">
 <h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
